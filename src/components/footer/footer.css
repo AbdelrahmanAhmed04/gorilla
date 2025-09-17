@@ -1,0 +1,146 @@
+.footer-container {
+  color: var(--main-dark);
+  background-color: var(--main-light);
+  font-family: var(--default-font);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vw 8vw;
+  h3 {
+    font-size: 1vw;
+    font-weight: 600;
+  }
+  p {
+    font-size: 0.9vw;
+    font-weight: 400;
+  }
+  a {
+    color: var(--main-dark);
+    text-decoration: none;
+    font-size: 0.9vw;
+    font-weight: 400;
+  }
+}
+.footer-cta {
+  width: 100%;
+
+  h2 {
+    font-size: 3vw;
+  }
+  a {
+    margin-top: 1vw;
+    width: fit-content;
+    padding: 0.6vw 1vw;
+    font-size: 1vw;
+    font-weight: 400;
+  }
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.underlined {
+  text-decoration: underline;
+}
+.red-colored {
+  color: var(--main-red);
+}
+
+.footer-contacts {
+  width: 60vw;
+  display: flex;
+  justify-content: space-between;
+
+  .social-media {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+    .locations-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5vw;
+    }
+    .social-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5vw;
+    }
+    .social-links-continer {
+      display: grid;
+      grid-template-columns: auto auto;
+      .social-link {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5vw;
+        margin-right: 1vw;
+        margin-bottom: 0.2vw;
+        img {
+          width: 1vw;
+        }
+      }
+    }
+  }
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: end;
+      gap: 0.5vw;
+      a {
+        width: fit-content;
+      }
+    }
+    .footer-nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      text-align: end;
+      gap: 0.5vw;
+      .links-container {
+        display: flex;
+        gap: 0.5vw;
+        justify-content: center;
+        align-items: flex-start;
+        .red-colored {
+          font-size: 3vw;
+          line-height: 0;
+          margin-top: -0.25vw;
+        }
+      }
+    }
+  }
+}
+.productions-subfooter {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2vw;
+
+  p {
+    color: var(--main-light);
+    font-family: var(--default-font);
+    font-size: 14vw;
+    font-weight: 700;
+    letter-spacing: -0.8vw;
+    text-transform: uppercase;
+    opacity: 0.6;
+    mix-blend-mode: color-dodge;
+    text-align: center;
+  }
+}
+
+.copyrights-container {
+  padding: 1.5vw 8vw;
+  background-color: var(--main-light);
+  p {
+    font-family: var(--default-font);
+    color: var(--main-dark);
+    font-size: 0.9vw;
+    font-weight: 300;
+    text-align: end;
+  }
+}

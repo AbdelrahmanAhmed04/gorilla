@@ -1,0 +1,43 @@
+.hero-container {
+  padding: 40px 0;
+  height: 100vh !important;
+  position: relative;
+  background-size: cover; /* makes it cover */
+  background-position: center; /* keeps it centered */
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.countries-container {
+  font-family: var(--default-font);
+  color: var(--hero-color);
+  text-transform: uppercase;
+  display: flex;
+  gap: 2vw;
+  font-size: 1vw;
+}
+.logo-container {
+  background: black;
+  justify-content: center;
+  border-radius: 30%; /* Creates an oval shape */
+  box-shadow: 0px 0px 20px 20px rgba(0, 0, 0, 1);
+
+  img {
+    width: 20vw;
+    margin: -15px;
+  }
+}
+
+.hero-navigation {
+  display: flex;
+  gap: 1.2vw;
+  a {
+    color: var(--hero-color);
+    text-transform: uppercase;
+    border-radius: 36px;
+    font-weight: 300;
+  }
+}
