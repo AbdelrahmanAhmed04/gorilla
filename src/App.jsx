@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Hero from "./components/hero/Hero";
-import AboutSection from "./components/aboot-section/AboutSection";
+import AboutSection from "./components/about-section/AboutSection";
 import Footer from "./components/footer/Footer";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 

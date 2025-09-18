@@ -1,0 +1,77 @@
+.lead-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #ececec;
+  width: 100%;
+  border-radius: 32px;
+  color: var(-x-main-dark);
+  font-family: var(--default-font);
+  padding: 2vw 3vw;
+
+  .form-feild {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    width: 100%;
+    img {
+      width: 1vw;
+      max-height: 1vw;
+    }
+    label {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1vw;
+      height: fit-content;
+      font-size: 1vw;
+      font-weight: 400;
+    }
+    input,
+    textarea {
+      background-color: transparent;
+      border: 1px solid #b3b3b3;
+      border-radius: 24px;
+      padding: 0.7vw 1.5vw;
+      width: 100%;
+      font-family: var(--default-font);
+      font-size: 1vw;
+      color: #9d9d9d;
+      font-weight: 400;
+    }
+    textarea {
+      overflow: hidden;
+      resize: none;
+      height: 160px;
+    }
+    .glass-button {
+      width: fit-content;
+      background-color: var(--main-dark);
+      color: var(--main-light);
+      z-index: 5;
+    }
+    .glass-button:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}

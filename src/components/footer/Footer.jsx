@@ -1,9 +1,9 @@
 import "./footer.css";
 import { Link } from "react-router-dom";
-import InstagramLogo from "../../assets/instagram.svg";
-import TiktokLogo from "../../assets/tiktok.svg";
-import VimeoLogo from "../../assets/vimeo.svg";
-import YoutubeLogo from "../../assets/youtube.svg";
+import InstagramLogo from "../../assets/icons/instagram.svg";
+import TiktokLogo from "../../assets/icons/tiktok.svg";
+import VimeoLogo from "../../assets/icons/vimeo.svg";
+import YoutubeLogo from "../../assets/icons/youtube.svg";
 import FooterBg from "../../assets/footer-bg.png";
 function Footer() {
   return (

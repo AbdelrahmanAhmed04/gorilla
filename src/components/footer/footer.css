@@ -36,15 +36,6 @@
     font-weight: 400;
   }
 }
-.uppercase {
-  text-transform: uppercase;
-}
-.underlined {
-  text-decoration: underline;
-}
-.red-colored {
-  color: var(--main-red);
-}
 
 .footer-contacts {
   width: 60vw;

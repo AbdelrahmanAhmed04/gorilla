@@ -16,7 +16,7 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  padding: 10px 14px;
+  padding: 0.8vw 1vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,21 +89,23 @@
 #glass-button-extended::before {
   background: linear-gradient(
     165deg,
-    rgba(255, 255, 255, 0.8) 0%,
-    rgba(255, 255, 255, 0.8) 35%,
-    rgba(255, 255, 255, 0) 50%,
-    rgba(255, 255, 255, 0.8) 65%
+    rgba(255, 255, 255, 0.8) 25%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0.8) 75%
   );
+  padding: 0.5px;
 }
 
 #glass-button-extended::after {
   background: linear-gradient(
     175deg,
-    rgba(255, 255, 255, 0.8) 0%,
-    rgba(255, 255, 255, 0.8) 35%,
-    rgba(255, 255, 255, 0) 50%,
-    rgba(255, 255, 255, 0.8) 65%
+    rgba(255, 255, 255, 0.8) 25%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0.8) 75%
   );
+  padding: 0.5px;
 }
 
 #glass-button-extended:hover::before {
@@ -120,4 +122,16 @@
   text-decoration: underline !important;
   font-weight: 400;
   font-size: 1vw;
+}
+.bold {
+  font-weight: 700;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.underlined {
+  text-decoration: underline;
+}
+.red-colored {
+  color: var(--main-red);
 }

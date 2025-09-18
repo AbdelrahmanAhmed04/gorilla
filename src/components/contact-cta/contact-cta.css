@@ -1,0 +1,42 @@
+.contact-cta-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6vw 8vw;
+  color: var(--main-light);
+  font-family: var(--default-font);
+  background-color: var(--main-dark);
+  z-index: 0;
+  text-align: center;
+  margin-top: -2px;
+  .contact-bg-container {
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+    opacity: 0.36;
+  }
+  .contact-cta-content {
+    z-index: 2;
+  }
+  .glass-button {
+    width: fit-content;
+    color: var(--main-light);
+    z-index: 2;
+  }
+}
+
+.contact-cta-container-1 {
+  font-size: 4vw;
+  font-weight: 700;
+  gap: 1.5vw;
+}
+.contact-cta-container-2 {
+  font-size: 3vw;
+  font-weight: 600;
+  gap: 2vw;
+}

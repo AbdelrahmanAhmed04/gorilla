@@ -1,0 +1,7 @@
+.contact-section-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--main-light);
+  padding: 6vw 8vw;
+  gap: 2vw;
+}

@@ -1,0 +1,101 @@
+.navbar-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vw 8vw 1vw 8vw;
+  font-size: 1.2vw;
+  font-weight: 300;
+  font-family: var(--default-font);
+  text-transform: uppercase;
+  z-index: 0;
+
+  img {
+    width: 10vw;
+  }
+}
+
+.dark-nav {
+  border: 1px solid #888888;
+
+  background-color: var(--main-dark);
+  a {
+    color: var(--main-light);
+  }
+}
+.light-nav {
+  background-color: var(--main-light);
+  border: 1px solid white;
+
+  a {
+    color: var(--main-dark);
+  }
+}
+.transparent-nav {
+  background-image: linear-gradient(
+    to bottom,
+    var(--main-light) 20%,
+    #e2e0e0d3 60%,
+    #e2e0e092 100%
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  a {
+    color: var(--main-dark);
+  }
+}
+.transparent-nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #dfdddd, transparent) top,
+    linear-gradient(to right, #dfdddd, transparent) left,
+    linear-gradient(to top, #eae8e8, transparent) bottom,
+    linear-gradient(to left, #eae8e8, transparent) right;
+  background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+.light-nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #dfdddd, transparent) top,
+    linear-gradient(to right, #dfdddd, transparent) left,
+    linear-gradient(to top, #eae8e8, transparent) bottom,
+    linear-gradient(to left, #eae8e8, transparent) right;
+  background-size: 100% 12px, 12px 100%, 100% 12px, 12px 100%;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+.dark-nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #141414, transparent) top,
+    linear-gradient(to right, #141414, transparent) left,
+    linear-gradient(to top, #242424, transparent) bottom,
+    linear-gradient(to left, #242424, transparent) right;
+  background-size: 100% 12px, 12px 100%, 100% 12px, 12px 100%;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+.nav-links {
+  z-index: 5;
+  display: flex;
+  gap: 3vw;
+  a {
+    text-decoration: none;
+    transition: ease-in-out 0.2s;
+  }
+  a:hover {
+    font-weight: 700;
+    text-decoration: underline;
+    scale: 1.05;
+  }
+  .active {
+    font-weight: 700;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,29 @@
+.contact-hero-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+  padding: 11vw 6vw 11vw 6vw;
+  font-family: var(--default-font);
+  color: var(--main-light);
+  h3 {
+    z-index: 1;
+    font-size: 4vw;
+  }
+  p {
+    z-index: 1;
+    font-size: 2vw;
+  }
+}
+.contact-hero-bg-container {
+  position: absolute;
+  top: -200px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: bottom center;
+  z-index: -1;
+}
