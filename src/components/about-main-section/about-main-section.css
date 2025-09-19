@@ -14,7 +14,7 @@
     text-transform: capitalize;
   }
   p {
-    font-size: 1.3vw;
+    font-size: 1.5vw;
     font-weight: 400;
   }
 }
@@ -150,7 +150,7 @@
     }
   }
   p {
-    font-size: 1.4vw;
+    font-size: 1.3vw;
     height: fit-content;
   }
 }
