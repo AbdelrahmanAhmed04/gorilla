@@ -1,4 +1,5 @@
 import "./contact.css";
+import { useEffect } from "react";
 import Footer from "../../components/footer/Footer";
 import ContactHero from "../../components/contact-hero/ContactHero";
 import Navbar from "../../components/navbar/Navbar";
@@ -9,6 +10,17 @@ import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LocationSection from "../../components/location-section/LocationSection";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+const images = import.meta.glob("./assets/*.{jpg,png,webp}", { eager: true });
+
+function usePreloadAssets() {
+  useEffect(() => {
+    Object.values(images).forEach((module) => {
+      const img = new Image();
+      img.src = module.default; // module.default is the URL
+    });
+  }, []);
+}
 
 function Contact() {
   var wrapperRef = useRef();
@@ -24,6 +36,7 @@ function Contact() {
 
     return () => smoother.kill();
   }, []);
+  usePreloadAssets();
   return (
     <>
       <div className="smooth-wrapper" ref={wrapperRef}>

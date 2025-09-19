@@ -1,4 +1,4 @@
-import { useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect, useEffect } from "react";
 import "./about.css";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
@@ -8,6 +8,16 @@ import { gsap } from "gsap";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+const images = import.meta.glob("./assets/*.{jpg,png,webp}", { eager: true });
+
+function usePreloadAssets() {
+  useEffect(() => {
+    Object.values(images).forEach((module) => {
+      const img = new Image();
+      img.src = module.default; // module.default is the URL
+    });
+  }, []);
+}
 
 function About() {
   var wrapperRef = useRef();
@@ -23,6 +33,7 @@ function About() {
 
     return () => smoother.kill();
   }, []);
+  usePreloadAssets();
   return (
     <>
       <div className="smooth-wrapper" ref={wrapperRef}>
