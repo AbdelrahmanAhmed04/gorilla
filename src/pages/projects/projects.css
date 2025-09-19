@@ -6,7 +6,8 @@
   background-color: var(--main-dark);
   color: var(--main-light);
   font-family: var(--default-font);
-  padding: 6vw 8vw 2vw 8vw;
+  padding: 6vw 8vw 0vw 8vw;
+  margin-top: -2px;
   h2 {
     font-size: 3vw;
     font-weight: 700;
@@ -16,15 +17,9 @@
     font-weight: 400;
   }
 }
-.categories-filter-container {
-  display: flex;
-  justify-content: center;
-  background-color: var(--main-dark);
-  color: var(--main-light);
-  font-family: var(--default-font);
-}
+
 .categories-filters {
-  margin-top: 20px;
+  margin: 2.5vw 0;
   padding: 0.4vw 0.8vw;
   display: flex;
   width: fit-content;
@@ -52,7 +47,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2%;
-  padding: 2vw 8vw;
+  margin-top: -1px;
+  padding: 0vw 8vw 2vw 8vw;
   background-color: var(--main-dark);
   color: var(--main-light);
   font-family: var(--default-font);

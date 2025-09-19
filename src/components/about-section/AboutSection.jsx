@@ -1,6 +1,6 @@
 import "./about-section.css";
 import { Link } from "react-router-dom";
-import AboutSectionBG from "../../assets/about-bg.png";
+import AboutSectionBG from "../../assets/about-bg.webp";
 
 function AboutSection() {
   return (

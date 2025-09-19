@@ -1,4 +1,4 @@
-import MainSectionBg from "../../assets/contact-hero-bg.png";
+import MainSectionBg from "../../assets/contact-hero-bg.webp";
 import "./contact-hero.css";
 
 function ContactHero() {

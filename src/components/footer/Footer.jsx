@@ -4,7 +4,7 @@ import InstagramLogo from "../../assets/icons/instagram.svg";
 import TiktokLogo from "../../assets/icons/tiktok.svg";
 import VimeoLogo from "../../assets/icons/vimeo.svg";
 import YoutubeLogo from "../../assets/icons/youtube.svg";
-import FooterBg from "../../assets/footer-bg.png";
+import FooterBg from "../../assets/footer-bg.webp";
 function Footer() {
   return (
     <footer>

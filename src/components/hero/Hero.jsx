@@ -1,6 +1,6 @@
 import "./hero.css";
 import { Link } from "react-router-dom";
-import HeroBg from "../../assets/hero-bg.jpg";
+import HeroBg from "../../assets/hero-bg.webp";
 import HeroLogo from "../../assets/logo-black-outlined.svg";
 
 function Hero() {

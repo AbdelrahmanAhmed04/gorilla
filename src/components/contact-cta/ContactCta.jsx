@@ -1,6 +1,6 @@
 import "./contact-cta.css";
-import ContactCta1Bg from "../../assets/contact-cta-1-bg.png";
-import ContactCta2Bg from "../../assets/contact-cta-2-bg.png";
+import ContactCta1Bg from "../../assets/contact-cta-1-bg.webp";
+import ContactCta2Bg from "../../assets/contact-cta-2-bg.webp";
 import { Link } from "react-router-dom";
 function ContactCta(props) {
   return (
