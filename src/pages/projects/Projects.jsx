@@ -28,7 +28,7 @@ function Projects() {
 
   const [projects, setProjects] = useState([]);
   const [updatedProjects, setUpdatedProjects] = useState([]);
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState("all");
 
   useEffect(() => {
     async function fetchProjects() {
