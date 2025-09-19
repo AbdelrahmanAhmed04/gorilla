@@ -6,6 +6,7 @@ import "./index.css";
 import App from "./App.jsx";
 import AboutPage from "./pages/about/About.jsx";
 import ContactPage from "./pages/contact/Contact.jsx";
+import ProjectsPage from "./pages/projects/Projects.jsx";
 if ("scrollRestoration" in window.history) {
   window.history.scrollRestoration = "manual";
 }
@@ -27,6 +28,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/" element={<App />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

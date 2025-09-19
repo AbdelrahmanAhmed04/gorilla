@@ -1,0 +1,107 @@
+.projects-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--main-dark);
+  color: var(--main-light);
+  font-family: var(--default-font);
+  padding: 6vw 8vw 2vw 8vw;
+  h2 {
+    font-size: 3vw;
+    font-weight: 700;
+  }
+  p {
+    font-size: 1.2vw;
+    font-weight: 400;
+  }
+}
+.categories-filter-container {
+  display: flex;
+  justify-content: center;
+  background-color: var(--main-dark);
+  color: var(--main-light);
+  font-family: var(--default-font);
+}
+.categories-filters {
+  margin-top: 20px;
+  padding: 0.4vw 0.8vw;
+  display: flex;
+  width: fit-content;
+  justify-content: flex-start;
+  display: flex;
+  .red-colored {
+    font-size: 2.5vw;
+    margin-top: -1.5vw;
+  }
+  button {
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--main-light);
+    font-size: 0.8vw;
+    font-weight: 300;
+  }
+  .active {
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+  padding: 2vw 8vw;
+  background-color: var(--main-dark);
+  color: var(--main-light);
+  font-family: var(--default-font);
+  font-size: 1vw;
+  align-items: flex-start;
+}
+
+.project-card {
+  position: relative;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  flex: 1 1 45%;
+  min-width: 0;
+  height: 20vw;
+  margin-bottom: 1vw;
+  border-radius: 24px;
+  transition: flex 0.3s ease, height 0.3s ease;
+}
+
+.project-card h3 {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover {
+  flex: 2 1 49%; /* grow wider */
+  height: 22vw; /* grow taller */
+  z-index: 2;
+}
+
+.project-card:hover h3 {
+  opacity: 1;
+}
+.placeholder:hover {
+  height: 20vw; /* grow taller */
+  flex: 1 1 45%; /* grow wider */
+}
+.background-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: linear-gradient(
+    180deg,
+    rgba(217, 217, 217, 0) 0%,
+    rgba(33, 33, 33, 0.5) 75.96%
+  );
+}
