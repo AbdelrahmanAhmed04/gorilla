@@ -68,6 +68,9 @@
   margin-bottom: 1vw;
   border-radius: 24px;
   transition: flex 0.3s ease, height 0.3s ease;
+  h3 {
+    color: var(--main-light);
+  }
 }
 
 .project-card h3 {

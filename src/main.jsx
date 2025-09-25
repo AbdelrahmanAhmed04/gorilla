@@ -7,6 +7,8 @@ import App from "./App.jsx";
 import AboutPage from "./pages/about/About.jsx";
 import ContactPage from "./pages/contact/Contact.jsx";
 import ProjectsPage from "./pages/projects/Projects.jsx";
+import ProjectDetails from "./pages/project-details/ProjectDetails.jsx";
+import { ProjectsProvider } from "./components/projects-context/ProjectsContext.jsx";
 if ("scrollRestoration" in window.history) {
   window.history.scrollRestoration = "manual";
 }
@@ -22,14 +24,17 @@ function ScrollToTop() {
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-      </Routes>
-    </BrowserRouter>
+    <ProjectsProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/projects/:projectId" element={<ProjectDetails />} />
+        </Routes>
+      </BrowserRouter>
+    </ProjectsProvider>
   </StrictMode>
 );

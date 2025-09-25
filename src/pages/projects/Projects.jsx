@@ -1,11 +1,16 @@
 import "./projects.css";
-import { useState, useEffect } from "react";
+import {
+  useState,
+  useEffect,
+  useRef,
+  useLayoutEffect,
+  useContext,
+} from "react";
+import { ProjectsContext } from "../../components/projects-context/ProjectsContext";
 import Navbar from "../../components/navbar/Navbar";
 import ContactCta from "../../components/contact-cta/ContactCta";
 import Footer from "../../components/footer/Footer";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../../firebase";
-import { useRef, useLayoutEffect } from "react";
+import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -37,29 +42,19 @@ function Projects() {
     return () => smoother.kill();
   }, []);
 
-  const [projects, setProjects] = useState([]);
+  const { projects } = useContext(ProjectsContext); // ✅ shared state
   const [updatedProjects, setUpdatedProjects] = useState([]);
   const [filter, setFilter] = useState("all");
 
-  useEffect(() => {
-    async function fetchProjects() {
-      const querySnapshot = await getDocs(collection(db, "projects"));
-      const data = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setProjects(data);
-      setUpdatedProjects(data);
-    }
-    fetchProjects();
-  }, []);
   const filterProjects = (project) => {
     if (filter === "all") return true;
     return project.genra.includes(filter);
   };
+
   useEffect(() => {
     setUpdatedProjects(projects.filter(filterProjects));
-  }, [filter]);
+    console.log(updatedProjects);
+  }, [filter, projects]);
   usePreloadAssets();
   return (
     <>
@@ -107,7 +102,8 @@ function Projects() {
               <div className="skeleton">Loading projects...</div>
             ) : (
               updatedProjects.map((project) => (
-                <div
+                <Link
+                  to={`/projects/${project.id}`}
                   key={project.id}
                   style={{
                     backgroundImage: `url(${
@@ -121,7 +117,7 @@ function Projects() {
                 >
                   <div className="background-overlay"></div>
                   <h3>Client: {project.client}</h3>
-                </div>
+                </Link>
               ))
             )}
 
