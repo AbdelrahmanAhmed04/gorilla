@@ -83,6 +83,7 @@
 
 @media screen and (max-width: 768px) {
   .lead-form {
+    margin-top: 40px;
     border-radius: 18px;
     padding: 24px;
     gap: 24px;
