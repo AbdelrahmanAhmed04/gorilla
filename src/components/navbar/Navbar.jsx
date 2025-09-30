@@ -29,11 +29,12 @@ function Navbar(props) {
           : "light-nav navbar-container"
       }
     >
-      {/* Logo */}
-      <img
-        src={props.variant === "dark" ? DarkNavLogo : LightNavLogo}
-        alt="Gorilla logo"
-      />
+      <Link to="/">
+        <img
+          src={props.variant === "dark" ? DarkNavLogo : LightNavLogo}
+          alt="Gorilla logo"
+        />
+      </Link>
 
       {/* Hamburger */}
       <button

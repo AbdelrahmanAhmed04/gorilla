@@ -85,7 +85,21 @@ function Projects() {
                 >
                   All
                 </button>
-                <p className="red-colored">.</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="7"
+                  height="7"
+                  viewBox="0 0 7 7"
+                  fill="none"
+                >
+                  <circle
+                    cx="3"
+                    cy="3"
+                    r="3"
+                    transform="matrix(-1 0 0 1 6.7998 0.407578)"
+                    fill="#CC3333"
+                  />
+                </svg>{" "}
                 <button
                   className={`${filter === "commercials" ? "active" : ""}`}
                   onClick={() => {
@@ -94,7 +108,21 @@ function Projects() {
                 >
                   Commercials
                 </button>
-                <p className="red-colored">.</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="7"
+                  height="7"
+                  viewBox="0 0 7 7"
+                  fill="none"
+                >
+                  <circle
+                    cx="3"
+                    cy="3"
+                    r="3"
+                    transform="matrix(-1 0 0 1 6.7998 0.407578)"
+                    fill="#CC3333"
+                  />
+                </svg>{" "}
                 <button
                   className={`${filter === "music" ? "active" : ""}`}
                   onClick={() => {
@@ -113,7 +141,21 @@ function Projects() {
                 >
                   EG
                 </button>
-                <p className="red-colored">.</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="7"
+                  height="7"
+                  viewBox="0 0 7 7"
+                  fill="none"
+                >
+                  <circle
+                    cx="3"
+                    cy="3"
+                    r="3"
+                    transform="matrix(-1 0 0 1 6.7998 0.407578)"
+                    fill="#CC3333"
+                  />
+                </svg>
                 <button
                   className={`${country === "ksa" ? "active" : ""}`}
                   onClick={() => {

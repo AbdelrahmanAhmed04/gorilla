@@ -236,6 +236,7 @@
   }
   .about-container-2 {
     flex-direction: column;
+    padding-bottom: 60px;
     .title-container {
       display: none;
     }

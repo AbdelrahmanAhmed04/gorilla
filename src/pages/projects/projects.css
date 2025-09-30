@@ -25,15 +25,12 @@
 }
 .categories-filters {
   margin: 2.5vw 0;
-  padding: 0.4vw 0.8vw;
+  padding: 16px 8px;
   display: flex;
   width: fit-content;
   justify-content: flex-start;
   display: flex;
-  .red-colored {
-    font-size: 2.5vw;
-    margin-top: -1.5vw;
-  }
+
   button {
     background-color: transparent;
     cursor: pointer;
@@ -126,12 +123,8 @@
   .categories-filters {
     padding: 8px 16px;
 
-    .red-colored {
-      font-size: 38px;
-      margin-top: -24px;
-    }
     button {
-      font-size: 14px;
+      font-size: 16px;
     }
   }
 }
@@ -172,10 +165,6 @@
   .categories-filters {
     padding: 8px 16px;
 
-    .red-colored {
-      font-size: 36px;
-      margin-top: -22px;
-    }
     button {
       font-size: 12px;
     }

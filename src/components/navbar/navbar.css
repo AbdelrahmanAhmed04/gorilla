@@ -11,6 +11,9 @@
   overflow: visible;
   z-index: 1;
 
+  a {
+    z-index: 4;
+  }
   img {
     width: 10vw;
   }
@@ -178,6 +181,11 @@
 
 /* Responsive rules */
 @media screen and (max-width: 768px) {
+  .navbar-container {
+    img {
+      width: 100px;
+    }
+  }
   .counries {
     display: flex;
     flex-direction: row;
