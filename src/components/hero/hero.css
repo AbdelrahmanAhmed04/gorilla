@@ -82,7 +82,12 @@
 @media screen and (max-width: 576px) {
   .hero-container {
     a {
-      font-size: 2.5vw;
+      font-size: 3vw;
+    }
+    .hero-navigation {
+      .glass-button {
+        padding: 8px 24px;
+      }
     }
   }
   .logo-container {
