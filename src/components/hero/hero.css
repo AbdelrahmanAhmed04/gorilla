@@ -1,5 +1,5 @@
 .hero-container {
-  padding: 40px 0;
+  padding: 40px 8vw;
   height: 100vh !important;
   position: relative;
   background-size: cover; /* makes it cover */
@@ -12,12 +12,15 @@
 }
 
 .countries-container {
-  font-family: var(--default-font);
-  color: var(--hero-color);
   text-transform: uppercase;
   display: flex;
   gap: 2vw;
-  font-size: 1vw;
+  a {
+    font-size: 1vw;
+    font-family: var(--default-font);
+    color: var(--hero-color);
+    text-decoration: none;
+  }
 }
 .logo-container {
   background: black;
@@ -39,5 +42,53 @@
     text-transform: uppercase;
     border-radius: 36px;
     font-weight: 300;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .hero-container {
+    a {
+      font-size: 1.5vw;
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .hero-container {
+    height: 50vh !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-container {
+    a {
+      font-size: 2vw;
+    }
+    .hero-navigation {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      .glass-button {
+        padding: 5px 20px;
+      }
+    }
+  }
+  .logo-container {
+    img {
+      width: 30vw;
+      margin: -15px;
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+  .hero-container {
+    a {
+      font-size: 2.5vw;
+    }
+  }
+  .logo-container {
+    img {
+      width: 40vw;
+      margin: -15px;
+    }
   }
 }

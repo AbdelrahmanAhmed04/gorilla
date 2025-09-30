@@ -7,6 +7,7 @@ import {
   useContext,
 } from "react";
 import { ProjectsContext } from "../../components/projects-context/ProjectsContext";
+import { CountryContext } from "../../country-context/CountryContext";
 import Navbar from "../../components/navbar/Navbar";
 import ContactCta from "../../components/contact-cta/ContactCta";
 import Footer from "../../components/footer/Footer";
@@ -42,19 +43,26 @@ function Projects() {
     return () => smoother.kill();
   }, []);
 
-  const { projects } = useContext(ProjectsContext); // ✅ shared state
+  const { projects } = useContext(ProjectsContext);
+  const { country, setCountry } = useContext(CountryContext);
   const [updatedProjects, setUpdatedProjects] = useState([]);
   const [filter, setFilter] = useState("all");
 
   const filterProjects = (project) => {
-    if (filter === "all") return true;
-    return project.genra.includes(filter);
+    if (filter !== "all") {
+      return (
+        project.genra.includes(filter) && project.country.includes(country)
+      );
+    } else if (filter === "all") {
+      return project.country.includes(country);
+    }
   };
 
   useEffect(() => {
-    setUpdatedProjects(projects.filter(filterProjects));
-    console.log(updatedProjects);
-  }, [filter, projects]);
+    const filtered = projects.filter(filterProjects);
+    setUpdatedProjects(filtered);
+    console.log(filter);
+  }, [filter, projects, country]);
   usePreloadAssets();
   return (
     <>
@@ -67,33 +75,54 @@ function Projects() {
               Commercials, branded content, and films produced with passion and
               precision.
             </p>
-            <div id="" className="categories-filters glass-button-no-hover">
-              <button
-                className={`${filter === "all" ? "active" : ""}`}
-                onClick={() => {
-                  setFilter("all");
-                }}
-              >
-                All
-              </button>
-              <p className="red-colored">.</p>
-              <button
-                className={`${filter === "commercials" ? "active" : ""}`}
-                onClick={() => {
-                  setFilter("commercials");
-                }}
-              >
-                Commercials
-              </button>
-              <p className="red-colored">.</p>
-              <button
-                className={`${filter === "music" ? "active" : ""}`}
-                onClick={() => {
-                  setFilter("music");
-                }}
-              >
-                Music Video
-              </button>
+            <div className="filters-container">
+              <div className="categories-filters glass-button-no-hover">
+                <button
+                  className={`${filter === "all" ? "active" : ""}`}
+                  onClick={() => {
+                    setFilter("all");
+                  }}
+                >
+                  All
+                </button>
+                <p className="red-colored">.</p>
+                <button
+                  className={`${filter === "commercials" ? "active" : ""}`}
+                  onClick={() => {
+                    setFilter("commercials");
+                  }}
+                >
+                  Commercials
+                </button>
+                <p className="red-colored">.</p>
+                <button
+                  className={`${filter === "music" ? "active" : ""}`}
+                  onClick={() => {
+                    setFilter("music");
+                  }}
+                >
+                  Music Video
+                </button>
+              </div>
+              <div className="categories-filters glass-button-no-hover">
+                <button
+                  className={`${country === "eg" ? "active" : ""}`}
+                  onClick={() => {
+                    setCountry("eg");
+                  }}
+                >
+                  EG
+                </button>
+                <p className="red-colored">.</p>
+                <button
+                  className={`${country === "ksa" ? "active" : ""}`}
+                  onClick={() => {
+                    setCountry("ksa");
+                  }}
+                >
+                  KSA
+                </button>
+              </div>
             </div>
           </div>
 

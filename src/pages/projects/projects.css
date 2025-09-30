@@ -17,7 +17,12 @@
     font-weight: 400;
   }
 }
-
+.filters-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
 .categories-filters {
   margin: 2.5vw 0;
   padding: 0.4vw 0.8vw;
