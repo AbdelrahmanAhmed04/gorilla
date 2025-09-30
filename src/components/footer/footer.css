@@ -180,6 +180,7 @@
     }
   }
   .copyrights-container {
+    padding: 16px 6vw;
     p {
       font-size: 14px;
       text-align: center;

@@ -17,6 +17,11 @@
     font-size: 1.5vw;
     font-weight: 400;
   }
+  svg {
+    circle {
+      r: 4;
+    }
+  }
 }
 
 .who-we {
@@ -64,12 +69,13 @@
 }
 .who-we__categories {
   display: flex;
-  gap: 1vw;
   align-items: flex-start;
-  .red-colored {
-    font-size: 5vw;
-    line-height: 0;
-    margin-top: -0.5vw;
+  .category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding-right: 16px;
   }
 }
 .who-we__bio {
@@ -94,7 +100,9 @@
   h3 {
     color: var(--hero-color);
   }
-
+  .mobile-title {
+    display: none;
+  }
   .title-container {
     display: flex;
     position: relative;
@@ -161,5 +169,127 @@
   gap: 1vw;
   p {
     text-align: end;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+}
+@media screen and (max-width: 992px) {
+  .about-main {
+    svg {
+      circle {
+        r: 3;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .about-main {
+    display: flex;
+    flex-direction: column;
+    h2 {
+      font-size: 56px;
+    }
+    h3 {
+      font-size: 40px;
+      font-weight: 700;
+      text-transform: capitalize;
+    }
+    h4 {
+      font-size: 24px;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 400;
+    }
+    svg {
+      circle {
+        r: 5;
+      }
+    }
+  }
+  .who-we {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: var(--main-light);
+    color: var(--main-dark);
+    font-family: var(--default-font);
+  }
+  .who-we__title__container {
+    .who-we__title {
+      writing-mode: horizontal-tb;
+      transform: rotate(0);
+      text-decoration: underline;
+      text-underline-offset: 8px;
+    }
+    .vertical-break {
+      display: none;
+    }
+  }
+  .who-we__content {
+    gap: 16px;
+  }
+  .who-we__categories {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .about-container-2 {
+    flex-direction: column;
+    .title-container {
+      display: none;
+    }
+    .mobile-title {
+      display: block;
+      text-align: end;
+      width: 100%;
+      text-decoration: underline;
+      text-underline-offset: 8px;
+      font-weight: 700;
+    }
+  }
+  .services-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .service {
+    gap: 16px;
+    width: 100%;
+    h4 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+  .our-presence-container {
+    gap: 16px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .about-main {
+    display: flex;
+    flex-direction: column;
+    h2 {
+      font-size: 48px;
+    }
+    h3 {
+      font-size: 36px;
+      font-weight: 700;
+      text-transform: capitalize;
+    }
+    h4 {
+      font-size: 24px;
+    }
+    p {
+      font-size: 16px;
+      font-weight: 400;
+    }
+    svg {
+      circle {
+        r: 5;
+      }
+    }
   }
 }

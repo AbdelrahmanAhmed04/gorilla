@@ -40,3 +40,58 @@
   font-weight: 600;
   gap: 2vw;
 }
+@media screen and (max-width: 1200px) {
+  .contact-cta-container {
+    .glass-button {
+      font-size: 1.5vw;
+      z-index: 2;
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .contact-cta-container {
+    .glass-button {
+      font-size: 2vw;
+      padding: 1vw 2vw;
+      z-index: 2;
+    }
+  }
+  .contact-cta-container-1 {
+    font-size: 5vw;
+    font-weight: 700;
+    gap: 1.5vw;
+  }
+  .contact-cta-container-2 {
+    font-size: 4vw;
+    font-weight: 600;
+    gap: 2vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .contact-cta-container {
+    padding: 80px 32px;
+    .glass-button {
+      width: 100%;
+      font-size: 20px;
+      padding: 12px;
+    }
+  }
+  .contact-cta-container-1 {
+    font-size: 40px;
+    font-weight: 700;
+    gap: 24px;
+  }
+  .contact-cta-container-2 {
+    font-size: 40px;
+    font-weight: 600;
+    gap: 32px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .contact-cta-container-1 {
+    font-size: 32px;
+  }
+  .contact-cta-container-2 {
+    font-size: 32px;
+  }
+}

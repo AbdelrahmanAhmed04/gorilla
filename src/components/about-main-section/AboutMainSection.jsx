@@ -13,12 +13,62 @@ function AboutMainSection() {
             <h3>who we are</h3>
 
             <div className="who-we__categories">
-              <p className="red-colored">.</p>
-              <p className="category">Bold stories</p>
-              <p className="red-colored">.</p>
-              <p className="category">Cinematic craft</p>
-              <p className="red-colored">.</p>
-              <p className="category">Middle Eastern roots</p>
+              <p className="category">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                >
+                  <circle
+                    cx="5"
+                    cy="5"
+                    r="5"
+                    transform="matrix(-1 0 0 1 10 -0.000244141)"
+                    fill="#CC3333"
+                  />
+                </svg>
+                Bold stories
+              </p>
+
+              <p className="category">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                >
+                  <circle
+                    cx="5"
+                    cy="5"
+                    r="5"
+                    transform="matrix(-1 0 0 1 10 -0.000244141)"
+                    fill="#CC3333"
+                  />
+                </svg>
+                Cinematic craft
+              </p>
+
+              <p className="category">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                >
+                  <circle
+                    cx="5"
+                    cy="5"
+                    r="5"
+                    transform="matrix(-1 0 0 1 10 -0.000244141)"
+                    fill="#CC3333"
+                  />
+                </svg>
+                Middle Eastern roots
+              </p>
             </div>
           </div>
           <div className="who-we__bio">
@@ -34,20 +84,52 @@ function AboutMainSection() {
         </div>
       </div>
       <div className="about-container-2">
+        <h2 className="mobile-title">About</h2>
+
         <div className="about-2-content">
           <div className="our-approch-container">
             <h3>our approach</h3>
             <div className="services-container">
               <div className="service">
                 <h4>
-                  <span className="red-colored">.</span>creative vision
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="10"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    fill="none"
+                  >
+                    <circle
+                      cx="5"
+                      cy="5"
+                      r="5"
+                      transform="matrix(-1 0 0 1 10 -0.000244141)"
+                      fill="#CC3333"
+                    />
+                  </svg>
+                  creative vision
                 </h4>
 
                 <p>We bring bold, original ideas to life.</p>
               </div>
               <div className="service">
                 <h4>
-                  <span className="red-colored">.</span>technical excellence
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="10"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    fill="none"
+                  >
+                    <circle
+                      cx="5"
+                      cy="5"
+                      r="5"
+                      transform="matrix(-1 0 0 1 10 -0.000244141)"
+                      fill="#CC3333"
+                    />
+                  </svg>
+                  technical excellence
                 </h4>
                 <p>
                   From high-end cinematography to post-production, we ensure
@@ -56,7 +138,22 @@ function AboutMainSection() {
               </div>
               <div className="service">
                 <h4>
-                  <span className="red-colored">.</span>collaborative spirit
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="10"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    fill="none"
+                  >
+                    <circle
+                      cx="5"
+                      cy="5"
+                      r="5"
+                      transform="matrix(-1 0 0 1 10 -0.000244141)"
+                      fill="#CC3333"
+                    />
+                  </svg>
+                  collaborative spirit
                 </h4>
                 <p>
                   We partner closely with agencies, brands, and creatives to

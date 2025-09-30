@@ -8,6 +8,7 @@
   font-weight: 300;
   font-family: var(--default-font);
   text-transform: uppercase;
+  overflow: visible;
   z-index: 1;
 
   img {
@@ -97,5 +98,103 @@
   .active {
     font-weight: 700;
     text-decoration: underline;
+  }
+}
+/* Hide hamburger on desktop */
+/* Hamburger button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 20px;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: var(--main-dark);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0s 0.08s;
+}
+.dark-nav .hamburger span {
+  background: var(--main-light);
+}
+.hamburger.open span {
+  background: var(--main-dark);
+}
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(12px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-12px);
+}
+
+/* Mobile full overlay */
+.mobile-nav {
+  position: fixed;
+  padding: 0 40px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--main-light);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-start;
+  padding-top: 80px;
+  gap: 2rem;
+  font-size: 24px;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease-in-out;
+  z-index: 1000;
+}
+
+.mobile-nav.show {
+  transform: translateY(0);
+}
+
+.mobile-nav a {
+  color: var(--main-dark);
+  text-decoration: none;
+  font-weight: 300;
+  transition: 0.2s ease;
+}
+.mobile-nav a:hover {
+  font-weight: 700;
+  text-decoration: underline;
+}
+.mobile-nav .active {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Responsive rules */
+@media screen and (max-width: 768px) {
+  .counries {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    width: 100%;
+    justify-content: end;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .navbar-container {
+    padding-top: 48px;
+    padding-bottom: 16px;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .nav-links {
+    display: none;
   }
 }
