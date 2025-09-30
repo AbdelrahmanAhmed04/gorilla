@@ -5,7 +5,11 @@ import TiktokLogo from "../../assets/icons/tiktok.svg";
 import VimeoLogo from "../../assets/icons/vimeo.svg";
 import YoutubeLogo from "../../assets/icons/youtube.svg";
 import FooterBg from "../../assets/footer-bg.webp";
+import { CountryContext } from "../../country-context/CountryContext";
+import { useContext } from "react";
+
 function Footer() {
+  const { setCountry } = useContext(CountryContext);
   return (
     <footer>
       <div className="footer-container">
@@ -27,8 +31,12 @@ function Footer() {
           <div className="social-media">
             <div className="locations-container">
               <h3>General</h3>
-              <p>EG</p>
-              <p>KSA</p>
+              <Link to="/projects" onClick={() => setCountry("eg")}>
+                EG
+              </Link>
+              <Link to="/projects" onClick={() => setCountry("ksa")}>
+                KSA
+              </Link>
             </div>
             <div className="social-container">
               <h3>Follow us on</h3>

@@ -27,3 +27,39 @@
   background-position: bottom center;
   z-index: -1;
 }
+@media screen and (max-width: 1200px) {
+}
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 768px) {
+  .contact-hero-container {
+    padding: 48px 36px;
+    gap: 16px;
+    h3 {
+      text-align: center;
+      font-size: 30px;
+      font-weight: 700;
+    }
+    p {
+      z-index: 1;
+      font-size: 24px;
+      text-align: center;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .contact-hero-container {
+    padding: 36px 32px;
+    gap: 16px;
+    h3 {
+      font-size: 24px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+}

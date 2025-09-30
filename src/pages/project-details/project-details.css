@@ -88,6 +88,53 @@
   a:hover {
     height: 14vw;
   }
-  p {
+}
+
+@media screen and (max-width: 1200px) {
+}
+@media screen and (max-width: 992px) {
+}
+@media screen and (max-width: 768px) {
+  .video-player-container {
+    z-index: 0;
+    height: 56.25vw;
+    width: 100vw;
+    position: relative;
+    background-color: black;
+    img {
+      position: absolute;
+      left: 37.5%;
+      width: 25%;
+      top: 45%;
+    }
+    iframe {
+      height: 100%;
+      width: 100%;
+      display: block;
+    }
   }
+  .project-page {
+    h2 {
+      font-size: 32px;
+      font-weight: 600;
+      padding-bottom: 24px;
+    }
+    p {
+      font-size: 16px;
+    }
+    h4 {
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+  .share-to-container {
+    padding: 24px 0px;
+    gap: 16px;
+  }
+  .more-projects-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+@media screen and (max-width: 576px) {
 }

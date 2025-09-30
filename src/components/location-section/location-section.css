@@ -50,3 +50,69 @@
   border-radius: 24px;
 }
 /* Contraband police search and seize */
+.contact-section-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--main-light);
+  padding: 5vw 6vw;
+  gap: 2vw;
+}
+@media screen and (max-width: 1200px) {
+}
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 768px) {
+  .location-section {
+    gap: 36px;
+    h3 {
+      font-size: 30px;
+      font-weight: 300;
+    }
+    h4 {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    p {
+      font-size: 16px;
+      text-wrap: nowrap;
+    }
+    img {
+      height: 36px;
+    }
+  }
+  .location-details {
+    flex-direction: column;
+    gap: 16px;
+    .right-clustur {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .left-clustur {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .location-section {
+    gap: 36px;
+    h3 {
+      font-size: 6.27vw;
+    }
+    h4 {
+      font-size: 20px;
+      font-weight: 600;
+    }
+    p {
+      font-size: 16px;
+      text-wrap: nowrap;
+    }
+    img {
+      height: 30px;
+    }
+  }
+}

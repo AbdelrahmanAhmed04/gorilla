@@ -61,7 +61,6 @@ function Projects() {
   useEffect(() => {
     const filtered = projects.filter(filterProjects);
     setUpdatedProjects(filtered);
-    console.log(filter);
   }, [filter, projects, country]);
   usePreloadAssets();
   return (

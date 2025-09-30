@@ -75,3 +75,51 @@
     transform: translateY(8px);
   }
 }
+
+@media screen and (max-width: 1200px) {
+}
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 768px) {
+  .lead-form {
+    border-radius: 18px;
+    padding: 24px;
+    gap: 24px;
+
+    .form-feild {
+      gap: 16px;
+      img {
+        width: 24px;
+        max-height: 24px;
+      }
+      label {
+        gap: 16px;
+        font-size: 20px;
+      }
+      input,
+      textarea {
+        border-radius: 24px;
+        padding: 16px 32px;
+        font-size: 14px;
+      }
+      textarea {
+        overflow: hidden;
+        resize: none;
+        height: 140px;
+      }
+      .glass-button {
+        width: 100%;
+        z-index: 5;
+        padding: 12px 8px;
+        font-size: 16px;
+      }
+      .glass-button:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+}

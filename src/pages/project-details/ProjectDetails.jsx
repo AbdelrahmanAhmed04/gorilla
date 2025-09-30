@@ -48,7 +48,6 @@ function ProjectDetails() {
     return [...others].sort(() => 0.5 - Math.random()).slice(0, 3);
   }, [projects, projectId]);
 
-  console.log(moreWork);
   return (
     <div className="smooth-wrapper" ref={wrapperRef}>
       <div className="smooth-container" ref={containerRef}>
@@ -128,8 +127,8 @@ function ProjectDetails() {
               </div>
             </>
           )}
-          <Footer />
         </div>
+        <Footer />
       </div>
     </div>
   );
