@@ -24,7 +24,7 @@
   justify-content: space-between;
   align-items: stretch;
 
-  padding: 6vw 8vw 6vw 6vw;
+  padding: 6vw 6vw 6vw 4vw;
   gap: 6vw;
   background-color: var(--main-light);
   color: var(--main-dark);
@@ -89,7 +89,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 6vw 8vw;
+  padding: 6vw 6vw;
   gap: 5vw;
   h3 {
     color: var(--hero-color);

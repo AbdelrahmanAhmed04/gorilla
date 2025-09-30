@@ -6,7 +6,7 @@
   background-color: var(--main-dark);
   color: var(--main-light);
   font-family: var(--default-font);
-  padding: 6vw 8vw 0vw 8vw;
+  padding: 5vw 6vw 0vw 6vw;
   margin-top: -2px;
   h2 {
     font-size: 3vw;
@@ -53,7 +53,7 @@
   flex-wrap: wrap;
   gap: 2%;
   margin-top: -1px;
-  padding: 0vw 8vw 2vw 8vw;
+  padding: 0vw 6vw 2vw 6vw;
   background-color: var(--main-dark);
   color: var(--main-light);
   font-family: var(--default-font);

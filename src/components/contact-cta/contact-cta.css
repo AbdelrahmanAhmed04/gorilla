@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 6vw 8vw;
+  padding: 5vw 6vw;
   color: var(--main-light);
   font-family: var(--default-font);
   background-color: var(--main-dark);

@@ -6,7 +6,7 @@ import { CountryContext } from "../../country-context/CountryContext";
 import { useContext } from "react";
 
 function Hero() {
-  const { country, setCountry } = useContext(CountryContext);
+  const { setCountry } = useContext(CountryContext);
 
   return (
     <div

@@ -48,7 +48,7 @@
 }
 
 .project-details-container {
-  padding: 2vw 8vw;
+  padding: 2vw 6vw;
   display: flex;
   flex-direction: column;
 }
@@ -72,7 +72,7 @@
 }
 
 .more-work-container {
-  padding: 2vw 8vw;
+  padding: 2vw 6vw;
   display: flex;
   flex-direction: column;
   gap: 2vw;
