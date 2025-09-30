@@ -75,6 +75,7 @@
 
 @media screen and (max-width: 768px) {
   .about-section-container {
+    padding: 32px 6vw;
     flex-direction: column;
     gap: 4vw;
     .about-content {
@@ -90,6 +91,7 @@
     .about-cta {
       width: 100%;
       justify-content: space-between;
+      padding-top: 12px;
 
       a {
         font-size: 2vw;

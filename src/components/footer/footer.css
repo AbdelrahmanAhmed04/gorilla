@@ -172,6 +172,13 @@
 }
 
 @media screen and (max-width: 768px) {
+  .productions-subfooter {
+    padding: 32px 6vw;
+    p {
+      font-size: 13vw;
+      text-align: center;
+    }
+  }
   .copyrights-container {
     p {
       font-size: 14px;
@@ -179,6 +186,7 @@
     }
   }
   .footer-container {
+    padding: 32px 6vw;
     gap: 24px;
     h3 {
       font-size: 16px;
@@ -191,6 +199,7 @@
     }
     .footer-cta {
       .glass-button {
+        margin-top: 18px;
         font-size: 16px;
         padding: 1vw 2vw;
       }
@@ -227,6 +236,7 @@
     gap: 24px;
     h3 {
       font-size: 16px;
+      padding-top: 4px;
     }
     p {
       font-size: 14px;
