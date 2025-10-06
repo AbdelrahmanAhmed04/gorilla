@@ -1,4 +1,5 @@
 .footer-container {
+  overflow: visible;
   color: var(--main-dark);
   background-color: var(--main-light);
   font-family: var(--default-font);
@@ -253,7 +254,7 @@
       .glass-button {
         width: 100%;
         font-size: 4vw;
-        padding: 1vw 2vw;
+        padding: 12px;
       }
     }
 
@@ -282,4 +283,8 @@
       }
     }
   }
+}
+.production-char {
+  display: inline-block;
+  will-change: transform, opacity;
 }
