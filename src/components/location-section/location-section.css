@@ -4,6 +4,7 @@
   gap: 2vw;
   font-family: var(--default-font);
   padding: 2vw 0vw;
+  will-change: transform, opacity;
 
   h3 {
     font-size: 2vw;

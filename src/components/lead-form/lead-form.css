@@ -123,4 +123,27 @@
 }
 
 @media screen and (max-width: 576px) {
+
+}
+
+.lead-form-row {
+  display: flex;
+  flex-direction: row;
+  gap: 3vw;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+}
+.lead-form-left, .lead-form-right {
+  flex: 1 1 0;
+  min-width: 0;
+}
+@media screen and (max-width: 900px) {
+  .lead-form-row {
+    flex-direction: column;
+    gap: 2vw;
+  }
+  .lead-form-left, .lead-form-right {
+    width: 100%;
+  }
 }

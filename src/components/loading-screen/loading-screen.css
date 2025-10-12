@@ -1,0 +1,68 @@
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1a1a1a; /* main-dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999; /* Higher z-index to ensure it's on top */
+  transition: opacity 0.1s ease-in-out;
+}
+
+.loading-screen.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.loading-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loading-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loading-gif {
+  max-width: 200px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Animation for smooth fade in/out */
+.loading-screen.visible {
+  animation: fadeIn 0.05s ease-in-out; /* Very fast fade in */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .loading-gif {
+    max-width: 150px;
+    max-height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loading-gif {
+    max-width: 120px;
+    max-height: 120px;
+  }
+}

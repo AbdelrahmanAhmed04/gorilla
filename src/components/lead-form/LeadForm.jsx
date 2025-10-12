@@ -6,12 +6,12 @@ import EmailIcon from "../../assets/icons/email.svg";
 import PhoneIcon from "../../assets/icons/mobile.svg";
 import CompanyIcon from "../../assets/icons/company.svg";
 import MessageIcon from "../../assets/icons/message.svg";
+import gsap from "gsap";
 import "./lead-form.css";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-/* Toast rendered into document.body via portal.
-   - duration === null  => stay open until manually closed or replaced
-   - variant: "sending" | "success" | "error" | "info"
-*/
+gsap.registerPlugin(ScrollTrigger);
+
 function Toast({
   open,
   onClose,

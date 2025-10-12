@@ -22,6 +22,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 function ProjectDetails() {
   var wrapperRef = useRef();
   var containerRef = useRef();
+
   useLayoutEffect(() => {
     const smoother = ScrollSmoother.create({
       wrapper: wrapperRef.current,
@@ -40,8 +41,12 @@ function ProjectDetails() {
   const currentUrl = window.location.href;
 
   useEffect(() => {
-    const found = projects.find((p) => p.id === projectId);
-    if (found) setProject(found);
+    if (projects.length > 0) {
+      const found = projects.find((p) => p.id === projectId);
+      if (found) {
+        setProject(found);
+      }
+    }
   }, [projects, projectId]);
   const moreWork = useMemo(() => {
     const others = projects.filter((p) => p.id !== projectId);

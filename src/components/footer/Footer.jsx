@@ -58,9 +58,9 @@ function Footer() {
           {
             opacity: 1,
             x: 0,
-            duration: 0.5,
+            duration: 0.4,
             ease: "power2.out",
-            stagger: 0.13,
+            stagger: 0.1,
             scrollTrigger: {
               trigger: footerContainerRef.current,
               start: "top 80%",
@@ -78,9 +78,9 @@ function Footer() {
           {
             opacity: 1,
             x: 0,
-            duration: 0.7,
-            ease: "power3.out",
-            delay: 0.13 * sentenceWords.length,
+            duration: 0.3,
+            ease: "power1.out",
+            delay: 0.1,
             scrollTrigger: {
               trigger: footerContainerRef.current,
               start: "top 80%",
@@ -101,10 +101,10 @@ function Footer() {
           {
             opacity: 1,
             y: 0,
-            duration: 0.7,
-            ease: "power2.out",
-            stagger: 0.15,
-            delay: 0.13 * sentenceWords.length + 0.4,
+            duration: 0.3,
+            ease: "power1.out",
+            stagger: 0,
+            delay: 0.5,
             scrollTrigger: {
               trigger: footerContainerRef.current,
               start: "top 80%",

@@ -8,15 +8,25 @@
   padding: 11vw 6vw 11vw 6vw;
   font-family: var(--default-font);
   color: var(--main-light);
+  background-color: var(--main-dark);
+  overflow: hidden;
   h3 {
-    z-index: 1;
+    z-index: 2;
     font-size: 4vw;
   }
   p {
-    z-index: 1;
+    z-index: 2;
     font-size: 2vw;
   }
 }
+.dark-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--main-light);
+  z-index: 3;
+  transform: translateX(0);
+}
+
 .contact-hero-bg-container {
   position: absolute;
   top: -200px;
@@ -25,7 +35,7 @@
   bottom: 0;
   background-size: cover;
   background-position: bottom center;
-  z-index: -1;
+  z-index: 1;
 }
 @media screen and (max-width: 1200px) {
 }

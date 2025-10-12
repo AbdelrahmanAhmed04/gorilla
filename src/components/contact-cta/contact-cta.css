@@ -11,6 +11,15 @@
   z-index: 0;
   text-align: center;
   margin-top: -2px;
+  overflow: hidden;
+
+  .dark-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: var(--main-dark);
+    z-index: 3;
+    transform: translateX(0);
+  }
   .contact-bg-container {
     position: absolute;
     inset: 0;
