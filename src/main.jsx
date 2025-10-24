@@ -16,6 +16,7 @@ import {
 } from "./components/loading-context/LoadingContext.jsx";
 import LoadingScreen from "./components/loading-screen/LoadingScreen.jsx";
 import RouteLoadingHandler from "./components/route-loading-handler/RouteLoadingHandler.jsx";
+// PageTransitionProvider removed — no page transition wrapper
 if ("scrollRestoration" in window.history) {
   window.history.scrollRestoration = "manual";
 }
@@ -54,7 +55,7 @@ createRoot(document.getElementById("root")).render(
       <ProjectsProvider>
         <CountryProvider>
           <BrowserRouter>
-            <AppWithLoading />
+              <AppWithLoading />
           </BrowserRouter>
         </CountryProvider>
       </ProjectsProvider>

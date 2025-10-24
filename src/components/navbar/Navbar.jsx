@@ -6,6 +6,8 @@ import DarkNavLogo from "../../assets/logo-transparent-red-outlined.svg";
 import { CountryContext } from "../../country-context/CountryContext";
 import { useContext } from "react";
 
+// use NavLink (react-router-dom) for navigation links — TransitionLink removed
+
 function Navbar(props) {
   const { setCountry } = useContext(CountryContext);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -69,12 +71,12 @@ function Navbar(props) {
           contact
         </NavLink>
         <div className="counries">
-          <Link to="/projects" onClick={() => setCountry("eg")}>
+          <NavLink to="/projects" onClick={() => { setMenuOpen(false); setCountry("eg"); }}>
             eg
-          </Link>
-          <Link to="/projects" onClick={() => setCountry("ksa")}>
+          </NavLink>
+          <NavLink to="/projects" onClick={() => { setMenuOpen(false); setCountry("ksa"); }}>
             ksa
-          </Link>
+          </NavLink>
         </div>
       </div>
     </nav>
