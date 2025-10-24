@@ -2,7 +2,6 @@ import { forwardRef, useRef, useImperativeHandle } from "react";
 import { gsap } from "gsap";
 import "./page-transition.css";
 import gifSrc from "../../assets/loading-screen.gif";
-import { emitReveal } from "./transitionBridge";
 
 // Exposes `cover()` and `reveal()` methods via ref. cover(): slide in and hold (used on previous page).
 // reveal(): ensure GIF restarts, hold >=3s, then slide out to reveal the page (used on new page mount).
@@ -49,12 +48,12 @@ const PageTransition = forwardRef(function PageTransition(_, ref) {
       // Create a fresh Image element and preload it. We avoid cache-busting so the
       // browser can load it from cache quickly; replacing the DOM node with a
       // already-loaded image restarts the GIF without visible flicker.
-  const img = new Image();
-  // Cache-bust to force a fresh animation start from frame 0.
-  img.src = `${gifSrc}?_=${Date.now()}`;
-  // prefer eager loading so it decodes as soon as possible
-  img.loading = "eager";
-  img.decoding = "sync";
+      const img = new Image();
+      // Cache-bust to force a fresh animation start from frame 0.
+      img.src = `${gifSrc}?_=${Date.now()}`;
+      // prefer eager loading so it decodes as soon as possible
+      img.loading = "eager";
+      img.decoding = "sync";
       img.className = "pt-gif";
       img.alt = "transition";
       img.style.opacity = "0";
@@ -82,10 +81,6 @@ const PageTransition = forwardRef(function PageTransition(_, ref) {
           onComplete: () => {
             gsap.set(el, { display: "none" });
             tl.kill();
-            // notify listeners that the page reveal finished
-            try {
-              emitReveal();
-            } catch (e) {}
             resolve();
           },
         });

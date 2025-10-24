@@ -5,6 +5,7 @@ import { useLayoutEffect } from "react";
 import "./index.css";
 import App from "./App.jsx";
 import TransitionRouter from "./components/page-transition/TransitionRouter.jsx";
+import ScrollProgress from "./components/scroll-progress/ScrollProgress";
 import AboutPage from "./pages/about/About.jsx";
 import ContactPage from "./pages/contact/Contact.jsx";
 import ProjectsPage from "./pages/projects/Projects.jsx";
@@ -30,6 +31,8 @@ createRoot(document.getElementById("root")).render(
       <CountryProvider>
         <BrowserRouter>
           <ScrollToTop />
+          {/* Global scroll progress shown on every page */}
+          <ScrollProgress />
           <TransitionRouter
             routesElement={
               <Routes>
