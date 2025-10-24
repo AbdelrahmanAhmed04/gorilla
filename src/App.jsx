@@ -1,3 +1,13 @@
+// TODO: Implement a GSAP page transition.
+// Requirements:
+// 1. Create a reusable <PageTransition /> component with a full-screen div.
+// 2. When a route change happens, animate this div:
+//    - Slide in from the left.
+//    - Show a centered GIF for ~1.5s.
+//    - Slide back to the left revealing the new page.
+// 3. Use GSAP for all animations.
+// 4. Keep the code minimal and clean.
+
 import { useRef, useLayoutEffect, useEffect } from "react";
 import "./App.css";
 import { gsap } from "gsap";

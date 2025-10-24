@@ -1,0 +1,32 @@
+.page-transition-overlay {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background: var(--main-dark); /* use project's main dark variable */
+  z-index: 9999;
+  display: none; /* shown when animation runs */
+  align-items: center;
+  justify-content: center;
+  /* block interactions while visible */
+  pointer-events: auto;
+}
+
+.pt-gif-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pt-gif {
+  width: 260px; /* larger by default */
+  height: auto;
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 120ms linear, transform 120ms ease;
+  image-rendering: auto;
+}
+
+@media (min-width: 768px) {
+  .pt-gif {
+    width: 320px; /* larger on desktop */
+  }
+}
