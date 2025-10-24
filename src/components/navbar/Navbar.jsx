@@ -1,8 +1,26 @@
-import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { NavLink, Link } from "react-router-dom";
 import "./navbar.css";
 import LightNavLogo from "../../assets/logo-black-red.svg";
 import DarkNavLogo from "../../assets/logo-transparent-red-outlined.svg";
+import { CountryContext } from "../../country-context/CountryContext";
+import { useContext } from "react";
+
+// use NavLink (react-router-dom) for navigation links — TransitionLink removed
+
 function Navbar(props) {
+  const { setCountry } = useContext(CountryContext);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // 🔒 Prevent scrolling when menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [menuOpen]);
+
   return (
     <nav
       className={
@@ -13,43 +31,65 @@ function Navbar(props) {
           : "light-nav navbar-container"
       }
     >
-      <img
-        src={props.variant == "dark" ? DarkNavLogo : LightNavLogo}
-        alt="Gorilla logo"
-      />
+      <Link to="/">
+        <img
+          src={props.variant === "dark" ? DarkNavLogo : LightNavLogo}
+          alt="Gorilla logo"
+        />
+      </Link>
+
+      {/* Hamburger */}
+      <button
+        className={`hamburger ${menuOpen ? "open" : ""}`}
+        onClick={() => setMenuOpen((prev) => !prev)}
+        aria-label="Toggle menu"
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+
       <div className="nav-links">
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            isActive ? "active navlink" : "navlink"
-          }
-        >
+        <NavLink to="/">home</NavLink>
+        <NavLink to="/projects">projects</NavLink>
+        <NavLink to="/about">about</NavLink>
+        <NavLink to="/contact">contact</NavLink>
+      </div>
+
+      {/* Mobile overlay */}
+      <div className={`mobile-nav ${menuOpen ? "show" : ""}`}>
+        <NavLink to="/" onClick={() => setMenuOpen(false)}>
           home
         </NavLink>
-        <NavLink
-          to="/projects"
-          className={({ isActive }) =>
-            isActive ? "active navlink" : "navlink"
-          }
-        >
+        <NavLink to="/projects" onClick={() => setMenuOpen(false)}>
           projects
         </NavLink>
-        <NavLink
-          to="/about"
-          className={({ isActive }) =>
-            isActive ? "active navlink" : "navlink"
-          }
-        >
+        <NavLink to="/about" onClick={() => setMenuOpen(false)}>
           about
         </NavLink>
-        <NavLink
-          to="/contact"
-          className={({ isActive }) =>
-            isActive ? "active navlink" : "navlink"
-          }
-        >
+        <NavLink to="/contact" onClick={() => setMenuOpen(false)}>
           contact
         </NavLink>
+        <div className="counries">
+          <NavLink
+            to="/projects"
+            onClick={() => {
+              setMenuOpen(false);
+              setCountry("eg");
+            }}
+          >
+            eg
+          </NavLink>
+          <NavLink
+            to="/projects"
+            onClick={() => {
+              setMenuOpen(false);
+              setCountry("ksa");
+            }}
+          >
+            ksa
+          </NavLink>
+        </div>
       </div>
     </nav>
   );
