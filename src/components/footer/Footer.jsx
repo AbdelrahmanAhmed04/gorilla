@@ -114,28 +114,7 @@ function Footer() {
         );
       }
 
-      // Animate productions text
-      if (productionsRef.current) {
-        const chars =
-          productionsRef.current.querySelectorAll(".production-char");
-        gsap.fromTo(
-          chars,
-          { opacity: 0, y: 60 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            delay: 0.5,
-            ease: "power2.out",
-            stagger: 0.07,
-            scrollTrigger: {
-              trigger: productionsRef.current,
-              start: "top 90%",
-              once: true,
-            },
-          }
-        );
-      }
+      // Productions text is now handled by CSS animation
     }, footerContainerRef);
 
     return () => ctx.revert();
@@ -217,7 +196,7 @@ function Footer() {
         style={{ backgroundImage: `url(${FooterBg})` }}
         ref={productionsRef}
       >
-        <p>{productionsSpans}</p>
+        <p>PRODUCTIONS - PRODUCTIONS - PRODUCTIONS - PRODUCTIONS - PRODUCTIONS - PRODUCTIONS</p>
       </div>
       <div className="copyrights-container">
         <p>© 2025 Gorilla. All rights reserved.</p>

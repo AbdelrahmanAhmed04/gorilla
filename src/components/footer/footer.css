@@ -111,6 +111,9 @@
   background-position: center;
   background-repeat: no-repeat;
   padding: 2vw;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
 
   p {
     color: var(--main-light);
@@ -121,7 +124,18 @@
     text-transform: uppercase;
     opacity: 0.6;
     mix-blend-mode: color-dodge;
-    text-align: center;
+    display: inline-block;
+    padding-right: 50px;
+    animation: marquee 25s linear infinite;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
