@@ -3,7 +3,9 @@
   inset: 0; /* top:0; right:0; bottom:0; left:0 */
   background: var(--main-dark); /* use project's main dark variable */
   z-index: 9999;
-  display: none; /* shown when animation runs */
+  /* Show overlay by default to prevent initial content flash. It will be hidden
+     programmatically after the first reveal completes. */
+  display: flex;
   align-items: center;
   justify-content: center;
   /* block interactions while visible */
