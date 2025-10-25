@@ -1,77 +1,61 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./scroll-progress.css";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function ScrollProgress() {
   const progressBarRef = useRef(null);
   const progressFillRef = useRef(null);
 
   useEffect(() => {
-    const bar = progressBarRef.current;
     const fill = progressFillRef.current;
-    if (!bar || !fill) return;
+    if (!fill) return;
 
+    // initialize
     gsap.set(fill, { scaleY: 0 });
-
-    let trigger = null;
-
-    function getScroller() {
-      // If ScrollSmoother is active the smooth wrapper/container exists.
-      // Prefer the smooth wrapper (outer element) then the container, else fall back to document.scrollingElement.
-      return (
-        document.querySelector(".smooth-wrapper") ||
-        document.querySelector(".smooth-container") ||
-        document.scrollingElement ||
-        document.documentElement
-      );
-    }
-
-    function createTrigger() {
-      const scroller = getScroller();
-      // Kill previous trigger if present
-      if (trigger) {
-        try {
-          trigger.kill();
-        } catch (e) {}
-        trigger = null;
-      }
-
-      // Use ScrollTrigger with explicit scroller when available
-      trigger = ScrollTrigger.create({
-        scroller: scroller === document.documentElement ? window : scroller,
-        start: "top top",
-        end: "bottom bottom",
-        onUpdate: (self) => {
-          // Update fill scale directly for best performance
-          gsap.set(fill, { scaleY: self.progress });
-        },
-      });
-    }
-
-    // Create initially
-    createTrigger();
-
-    // Recreate when layout changes (smooth scroller may be added/removed on route changes)
-    const ro = new MutationObserver(() => {
-      // If the smooth-wrapper appears or disappears, recreate trigger
-      createTrigger();
+    // quickTo creates a fast, reusable tween function that smoothly animates
+    // the `scaleY` property with low overhead. We'll call this from rAF.
+    const smoothTo = gsap.quickTo(fill, "scaleY", {
+      duration: 0.35,
+      ease: "power3.out",
+      overwrite: true,
     });
-    ro.observe(document.body, { childList: true, subtree: true });
 
-    // Also recreate on resize (in case content height changes)
-    const onResize = () => createTrigger();
+    let rafId = null;
+
+    function getScrollProgress() {
+      const scroller = document.scrollingElement || document.documentElement;
+      const scrollTop = scroller.scrollTop;
+      const scrollHeight = scroller.scrollHeight;
+      const clientHeight = window.innerHeight || scroller.clientHeight;
+      const max = Math.max(scrollHeight - clientHeight, 1);
+      return Math.min(Math.max(scrollTop / max, 0), 1);
+    }
+
+    function update() {
+      const progress = getScrollProgress();
+      // animate smoothly to the new progress value
+      smoothTo(progress);
+      rafId = null;
+    }
+
+    function onScroll() {
+      if (rafId == null) rafId = requestAnimationFrame(update);
+    }
+
+    function onResize() {
+      if (rafId == null) rafId = requestAnimationFrame(update);
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onResize);
 
+    // Initial update
+    rafId = requestAnimationFrame(update);
+
     return () => {
-      if (trigger)
-        try {
-          trigger.kill();
-        } catch (e) {}
-      ro.disconnect();
+      window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
+      if (rafId) cancelAnimationFrame(rafId);
     };
   }, []);
 

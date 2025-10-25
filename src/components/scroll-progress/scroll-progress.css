@@ -2,92 +2,45 @@
 
 .scroll-progress-container {
   position: fixed;
-  top: 50%;
-  right: 18px;
-  transform: translateY(-50%);
+  top: 0;
+  right: 0;
   z-index: 20;
-  height: 200px; /* reduced overall height */
-  display: flex;
-  align-items: center;
+  height: 100vh;
   pointer-events: none;
 }
 
-/* Slimmer dark capsule background */
+/* Minimal single-line progress at the far right edge */
 .scroll-progress-bar {
   position: relative;
-  width: 20px; /* slimmer width */
+  width: 3px;
   height: 100%;
-  background: var(--main-dark);
-  border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
-  padding: 12px 0; /* creates spacing at top/bottom */
+  background: transparent;
 }
 
-/* Light inner track */
-.scroll-progress-bar::before {
-  content: "";
-  position: absolute;
-  width: 2px; /* very thin light line */
-  top: 8px;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--main-light);
-  border-radius: 2px;
-  z-index: 1;
-}
-
-/* Red progress line */
+/* Red vertical line that fills from top to bottom */
 .scroll-progress-fill {
   position: absolute;
+  right: 0;
+  top: 0;
   width: 3px;
-  top: 8px;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%) scaleY(0);
+  height: 100%;
   transform-origin: top;
+  transform: scaleY(0);
   background: var(--main-red);
-  border-radius: 2px;
   will-change: transform;
-  z-index: 2;
-  transition: transform 0.05s linear;
 }
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
-  .scroll-progress-container {
-    right: 20px;
-    height: 160px;
-  }
-  .scroll-progress-bar {
-    width: 16px;
-    padding: 6px 0;
-  }
-  .scroll-progress-bar::before,
+  .scroll-progress-bar,
   .scroll-progress-fill {
-    width: 2.5px;
-    top: 6px;
-    bottom: 6px;
+    width: 2px;
   }
 }
 
 @media (max-width: 768px) {
-  .scroll-progress-container {
-    right: 14px;
-    height: 130px;
-  }
-  .scroll-progress-bar {
-    width: 14px;
-    padding: 5px 0;
-  }
-  .scroll-progress-bar::before,
+  .scroll-progress-bar,
   .scroll-progress-fill {
     width: 2px;
-    top: 5px;
-    bottom: 5px;
   }
 }
