@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./navbar.css";
 import LightNavLogo from "../../assets/logo-black-red.svg";
-import DarkNavLogo from "../../assets/logo-transparent-red-outlined.svg";
+import DarkNavLogo from "../../assets/logo-light.svg";
 import { CountryContext } from "../../country-context/CountryContext";
 import { useContext } from "react";
 
@@ -29,14 +29,21 @@ function Navbar(props) {
           : "light-nav navbar-container"
       }
     >
+      <div className="nav-links">
+        <NavLink to="/">home</NavLink>
+        <NavLink to="/projects">projects</NavLink>
+      </div>
       <Link to="/">
         <img
           src={props.variant === "dark" ? DarkNavLogo : LightNavLogo}
           alt="Gorilla logo"
         />
       </Link>
+      <div className="nav-links">
+        <NavLink to="/about">about</NavLink>
+        <NavLink to="/contact">contact</NavLink>
+      </div>
 
-      {/* Hamburger */}
       <button
         className={`hamburger ${menuOpen ? "open" : ""}`}
         onClick={() => setMenuOpen((prev) => !prev)}
@@ -46,13 +53,6 @@ function Navbar(props) {
         <span />
         <span />
       </button>
-
-      <div className="nav-links">
-        <NavLink to="/">home</NavLink>
-        <NavLink to="/projects">projects</NavLink>
-        <NavLink to="/about">about</NavLink>
-        <NavLink to="/contact">contact</NavLink>
-      </div>
 
       {/* Mobile overlay */}
       <div className={`mobile-nav ${menuOpen ? "show" : ""}`}>

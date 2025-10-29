@@ -57,7 +57,7 @@ function ProjectDetails() {
     <div className="smooth-wrapper" ref={wrapperRef}>
       <div className="smooth-container" ref={containerRef}>
         <div className="project-page">
-          <Navbar variant="transparent" />
+          <Navbar variant="light" />
           {!project ? (
             <p>Loading project...</p>
           ) : (

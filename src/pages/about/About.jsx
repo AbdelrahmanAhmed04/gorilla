@@ -40,7 +40,7 @@ function About() {
         <div className="smooth-container" ref={containerRef}>
           <Navbar variant="light" active="about" />
           <AboutMainSection />
-          <ContactCta variant="2" />
+          <ContactCta variant="1" />
 
           <Footer />
         </div>

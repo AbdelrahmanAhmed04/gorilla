@@ -9,7 +9,7 @@ import { CountryContext } from "../../country-context/CountryContext";
 import { useContext, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import RedCircle from "../../assets/red-circle.png";
 gsap.registerPlugin(ScrollTrigger);
 
 function Footer() {
@@ -128,10 +128,11 @@ function Footer() {
             <h2>{sentenceSpans.slice(0, 4)}</h2>
             <h2>
               {sentenceSpans.slice(4, 5)}
-              <span className="underlined uppercase">
-                {sentenceSpans.slice(5, 6)}
+
+              <span className="red-colored uppercase">
+                {" "}
+                {sentenceSpans.slice(5, 7)}
               </span>
-              <span className="red-colored"> {sentenceSpans.slice(6, 7)}</span>
             </h2>
           </div>
           <Link
@@ -181,11 +182,18 @@ function Footer() {
             <div className="footer-nav">
               <h3>Helpful links</h3>
               <div className="links-container">
-                <Link to="/about">About</Link>
-                <span className="red-colored">.</span>
-                <Link to="/contact">Contact</Link>
-                <span className="red-colored">.</span>
-                <Link to="/projects">Projects</Link>
+                <div className="link-container">
+                  <Link to="/about">About</Link>
+                  <img src={RedCircle} alt="Red Circle" />
+                </div>
+                <div className="link-container">
+                  <Link to="/contact">Contact</Link>
+                  <img src={RedCircle} alt="Red Circle" />
+                </div>
+                <div className="link-container">
+                  <Link to="/projects">Projects</Link>
+                  <img src={RedCircle} alt="Red Circle" />
+                </div>
               </div>
             </div>
           </div>
@@ -196,7 +204,10 @@ function Footer() {
         style={{ backgroundImage: `url(${FooterBg})` }}
         ref={productionsRef}
       >
-        <p>PRODUCTIONS - PRODUCTIONS - PRODUCTIONS - PRODUCTIONS - PRODUCTIONS - PRODUCTIONS</p>
+        <p>
+          PRODUCTIONS - PRODUCTIONS - PRODUCTIONS - PRODUCTIONS - PRODUCTIONS -
+          PRODUCTIONS
+        </p>
       </div>
       <div className="copyrights-container">
         <p>© 2025 Gorilla. All rights reserved.</p>

@@ -1,0 +1,32 @@
+.scroll-section {
+  position: relative;
+  height: 100vh; /* The section pins for full-screen scroll */
+  overflow: hidden;
+}
+
+.scroll-track {
+  display: flex;
+  gap: 1rem;
+  width: max-content; /* allows scrollWidth to measure correctly */
+  padding: 2rem;
+  will-change: transform;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  .project-card {
+    width: 45vw; /* two visible cards */
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    height: 60%;
+    border-radius: 0;
+  }
+
+  .project-card:hover {
+    flex: 2 1 49%; /* grow wider */
+    height: 65%; /* grow taller */
+    z-index: 2;
+  }
+}

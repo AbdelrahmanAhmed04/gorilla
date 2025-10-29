@@ -34,7 +34,6 @@ function ContactCta(props) {
         y: 0,
         duration: 1,
         ease: "power2.out",
-        ease: 2,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 80%",
@@ -73,17 +72,15 @@ function ContactCta(props) {
       <p className="contact-cta-content gsap-fade-in">
         {props.variant === "1" ? (
           <>
-            Let's Create Something{" "}
-            <span className="red-colored uppercase underlined">together</span>
-            ...
+            Let's Create Something
+            <span className="red-colored uppercase ">together.</span>
           </>
         ) : (
           <>
             Want to <span className="uppercase">see more</span>{" "}
             <span className="red-colored">?</span>
             <br />
-            Let's create something{" "}
-            <span className="uppercase underlined">together</span>
+            Let's create something <span className="uppercase ">together</span>
             <span className="red-colored">.</span>
           </>
         )}

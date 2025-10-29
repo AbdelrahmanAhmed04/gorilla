@@ -49,12 +49,20 @@ function Projects() {
   const [filter, setFilter] = useState("all");
 
   const filterProjects = (project) => {
-    if (filter !== "all") {
-      return (
-        project.genra.includes(filter) && project.country.includes(country)
-      );
-    } else if (filter === "all") {
-      return project.country.includes(country);
+    if (country === "all") {
+      if (filter !== "all") {
+        return project.genra.includes(filter);
+      } else if (filter === "all") {
+        return project.country.includes("");
+      }
+    } else {
+      if (filter !== "all") {
+        return (
+          project.genra.includes(filter) && project.country.includes(country)
+        );
+      } else if (filter === "all") {
+        return project.country.includes(country);
+      }
     }
   };
 
@@ -69,101 +77,123 @@ function Projects() {
         <div className="smooth-container" ref={containerRef}>
           <Navbar variant="dark" />
           <div className="projects-hero">
+            <div className="categories-filters glass-button-no-hover">
+              <button
+                className={`${country === "all" ? "active" : ""}`}
+                onClick={() => {
+                  setCountry("all");
+                }}
+              >
+                ALL
+              </button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="7"
+                height="7"
+                viewBox="0 0 7 7"
+                fill="none"
+              >
+                <circle
+                  cx="3"
+                  cy="3"
+                  r="3"
+                  transform="matrix(-1 0 0 1 6.7998 0.407578)"
+                  fill="#CC3333"
+                />
+              </svg>
+              <button
+                className={`${country === "eg" ? "active" : ""}`}
+                onClick={() => {
+                  setCountry("eg");
+                }}
+              >
+                EG
+              </button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="7"
+                height="7"
+                viewBox="0 0 7 7"
+                fill="none"
+              >
+                <circle
+                  cx="3"
+                  cy="3"
+                  r="3"
+                  transform="matrix(-1 0 0 1 6.7998 0.407578)"
+                  fill="#CC3333"
+                />
+              </svg>
+              <button
+                className={`${country === "ksa" ? "active" : ""}`}
+                onClick={() => {
+                  setCountry("ksa");
+                }}
+              >
+                KSA
+              </button>
+            </div>
             <h2>Our Work</h2>
             <p>
               Commercials, branded content, and films produced with passion and
               precision.
             </p>
-            <div className="filters-container">
-              <div className="categories-filters glass-button-no-hover">
-                <button
-                  className={`${filter === "all" ? "active" : ""}`}
-                  onClick={() => {
-                    setFilter("all");
-                  }}
-                >
-                  All
-                </button>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="7"
-                  height="7"
-                  viewBox="0 0 7 7"
-                  fill="none"
-                >
-                  <circle
-                    cx="3"
-                    cy="3"
-                    r="3"
-                    transform="matrix(-1 0 0 1 6.7998 0.407578)"
-                    fill="#CC3333"
-                  />
-                </svg>{" "}
-                <button
-                  className={`${filter === "commercials" ? "active" : ""}`}
-                  onClick={() => {
-                    setFilter("commercials");
-                  }}
-                >
-                  Commercials
-                </button>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="7"
-                  height="7"
-                  viewBox="0 0 7 7"
-                  fill="none"
-                >
-                  <circle
-                    cx="3"
-                    cy="3"
-                    r="3"
-                    transform="matrix(-1 0 0 1 6.7998 0.407578)"
-                    fill="#CC3333"
-                  />
-                </svg>{" "}
-                <button
-                  className={`${filter === "music" ? "active" : ""}`}
-                  onClick={() => {
-                    setFilter("music");
-                  }}
-                >
-                  Music Video
-                </button>
-              </div>
-              <div className="categories-filters glass-button-no-hover">
-                <button
-                  className={`${country === "eg" ? "active" : ""}`}
-                  onClick={() => {
-                    setCountry("eg");
-                  }}
-                >
-                  EG
-                </button>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="7"
-                  height="7"
-                  viewBox="0 0 7 7"
-                  fill="none"
-                >
-                  <circle
-                    cx="3"
-                    cy="3"
-                    r="3"
-                    transform="matrix(-1 0 0 1 6.7998 0.407578)"
-                    fill="#CC3333"
-                  />
-                </svg>
-                <button
-                  className={`${country === "ksa" ? "active" : ""}`}
-                  onClick={() => {
-                    setCountry("ksa");
-                  }}
-                >
-                  KSA
-                </button>
-              </div>
+
+            <div className="categories-filters glass-button-no-hover">
+              <button
+                className={`${filter === "all" ? "active" : ""}`}
+                onClick={() => {
+                  setFilter("all");
+                }}
+              >
+                All
+              </button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="7"
+                height="7"
+                viewBox="0 0 7 7"
+                fill="none"
+              >
+                <circle
+                  cx="3"
+                  cy="3"
+                  r="3"
+                  transform="matrix(-1 0 0 1 6.7998 0.407578)"
+                  fill="#CC3333"
+                />
+              </svg>
+              <button
+                className={`${filter === "commercials" ? "active" : ""}`}
+                onClick={() => {
+                  setFilter("commercials");
+                }}
+              >
+                Commercials
+              </button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="7"
+                height="7"
+                viewBox="0 0 7 7"
+                fill="none"
+              >
+                <circle
+                  cx="3"
+                  cy="3"
+                  r="3"
+                  transform="matrix(-1 0 0 1 6.7998 0.407578)"
+                  fill="#CC3333"
+                />
+              </svg>{" "}
+              <button
+                className={`${filter === "music" ? "active" : ""}`}
+                onClick={() => {
+                  setFilter("music");
+                }}
+              >
+                Music Video
+              </button>
             </div>
           </div>
 

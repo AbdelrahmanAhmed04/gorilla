@@ -3,10 +3,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 16px;
   background-color: var(--main-dark);
   color: var(--main-light);
   font-family: var(--default-font);
-  padding: 5vw 6vw 0vw 6vw;
+  padding: 40px 0px;
   margin-top: -2px;
   h2 {
     font-size: 3vw;
@@ -15,6 +16,7 @@
   p {
     font-size: 1.2vw;
     font-weight: 400;
+    margin-bottom: 24px;
   }
 }
 .filters-container {
@@ -24,7 +26,6 @@
   width: 100%;
 }
 .categories-filters {
-  margin: 2.5vw 0;
   padding: 16px 8px;
   display: flex;
   width: fit-content;
@@ -48,9 +49,9 @@
 .projects-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 2%;
+  gap: 1%;
   margin-top: -1px;
-  padding: 0vw 6vw 2vw 6vw;
+  padding: 40px 32px;
   background-color: var(--main-dark);
   color: var(--main-light);
   font-family: var(--default-font);
@@ -66,9 +67,8 @@
   background-position: center center;
   flex: 1 1 45%;
   min-width: 0;
-  height: 20vw;
+  height: 25vw;
   margin-bottom: 1vw;
-  border-radius: 24px;
   transition: flex 0.3s ease, height 0.3s ease;
   h3 {
     color: var(--main-light);
@@ -85,7 +85,7 @@
 
 .project-card:hover {
   flex: 2 1 49%; /* grow wider */
-  height: 22vw; /* grow taller */
+  height: 27vw; /* grow taller */
   z-index: 2;
 }
 

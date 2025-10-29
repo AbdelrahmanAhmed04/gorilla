@@ -41,7 +41,7 @@ function Contact() {
     <>
       <div className="smooth-wrapper" ref={wrapperRef}>
         <div className="smooth-container" ref={containerRef}>
-          <Navbar variant="transparent" />
+          <Navbar variant="light" />
           <ContactHero />
           <div className="contact-section-container">
             <LocationSection />

@@ -1,7 +1,7 @@
 import { forwardRef, useRef, useImperativeHandle } from "react";
 import { gsap } from "gsap";
 import "./page-transition.css";
-import gifSrc from "../../assets/loading-screen.gif";
+import gifSrc from "../../assets/loading-screen2.gif";
 
 // Exposes `cover()` and `reveal()` methods via ref. cover(): slide in and hold (used on previous page).
 // reveal(): ensure GIF restarts, hold >=3s, then slide out to reveal the page (used on new page mount).
