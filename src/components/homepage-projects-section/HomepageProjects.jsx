@@ -13,19 +13,20 @@ function HomepageProjects() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    if (!projects || projects.length === 0) return;
+    if (!homepageProjects || homepageProjects.length === 0) return;
+
     const titles = gsap.utils.toArray(".card-title");
     let xOffset = 0;
-    const gap = 20; // Adjust this for spacing between titles
+    const gap = 20;
 
     titles.forEach((title) => {
       const width = title.getBoundingClientRect().width;
       gsap.set(title, { left: xOffset });
       xOffset += width + gap;
     });
+
     const ctx = gsap.context(() => {
       const cards = gsap.utils.toArray(".homepage-project-card");
-      gsap.set(cards, { y: "3%" });
 
       gsap.set(cards, {
         position: "absolute",
@@ -37,15 +38,15 @@ function HomepageProjects() {
 
       const timeline = gsap.timeline();
       timeline.totalDuration(cards.length);
+
       cards.forEach((card, index) => {
         gsap.set(card, { zIndex: index });
         if (index > 0) {
-          const fromDirection = index % 2 === 0 ? "-105%" : "105%"; // even = from left, odd = from right
           timeline.fromTo(
             card,
-            { x: fromDirection },
+            { x: "105%" },
             { x: "0%", duration: 1, ease: "linear" },
-            index - 1 // <- start the reveal for card #2 at time 0
+            index - 1
           );
         }
       });
@@ -58,18 +59,65 @@ function HomepageProjects() {
         scrub: true,
         pin: true,
       });
+
+      titles.forEach((title) => {
+        const index = parseInt(title.dataset.index, 10);
+
+        title.addEventListener("mouseenter", () => {
+          const after = cards.slice(index + 1);
+          const beforeAndCurrent = cards.slice(0, index + 1);
+
+          gsap.to(after, {
+            x: "105%",
+            duration: 0.5,
+            overwrite: "auto",
+            ease: "power2.out",
+          });
+
+          gsap.to(beforeAndCurrent, {
+            x: "0%",
+            duration: 0.4,
+            overwrite: "auto",
+            ease: "power2.out",
+          });
+        });
+
+        title.addEventListener("mouseleave", () => {
+          // Calculate where each card should be based on timeline progress
+          const progress = timeline.progress();
+
+          cards.forEach((card, i) => {
+            // Card should be at 0% if its animation is complete, otherwise 105%
+            const targetX =
+              i === 0 || progress >= i / (cards.length - 1) ? "0%" : "105%";
+
+            gsap.to(card, {
+              x: targetX,
+              duration: 0.6,
+              overwrite: "auto",
+              ease: "power2.inOut",
+            });
+          });
+        });
+      });
     }, sectionRef);
 
-    return () => ctx.revert();
-  }, [projects]);
+    return () => {
+      ctx.revert();
+    };
+  }, [homepageProjects]);
 
   return (
     <section className="homepage-projects-section" ref={sectionRef}>
-      {projects.length === 0 ? (
+      {homepageProjects.length === 0 ? (
         <div className="skeleton">Loading projects...</div>
       ) : (
-        homepageProjects.map((project) => (
-          <HomepageProjectCard key={project.id} project={project} />
+        homepageProjects.map((project, index) => (
+          <HomepageProjectCard
+            key={project.id}
+            project={project}
+            index={index}
+          />
         ))
       )}
     </section>

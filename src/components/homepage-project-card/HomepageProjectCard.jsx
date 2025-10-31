@@ -1,7 +1,7 @@
 import "./homepage-project-card.css";
 import { Link } from "react-router-dom";
 
-function HomepageProjectCard({ project }) {
+function HomepageProjectCard({ project, index }) {
   return (
     <Link
       to={`/projects/${project.id}`}
@@ -12,7 +12,7 @@ function HomepageProjectCard({ project }) {
         })`,
       }}
     >
-      <div className="card-title">
+      <div className="card-title" data-index={index}>
         <p>{project.title}</p>
       </div>
     </Link>
