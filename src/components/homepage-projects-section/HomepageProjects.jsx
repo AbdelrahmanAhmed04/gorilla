@@ -87,16 +87,38 @@ function HomepageProjects() {
           const progress = timeline.progress();
 
           cards.forEach((card, i) => {
-            // Card should be at 0% if its animation is complete, otherwise 105%
-            const targetX =
-              i === 0 || progress >= i / (cards.length - 1) ? "0%" : "105%";
+            if (i === 0) {
+              // First card is always at 0%
+              gsap.to(card, {
+                x: "0%",
+                duration: 0.6,
+                overwrite: "auto",
+                ease: "power2.inOut",
+              });
+            } else {
+              // Calculate the card's position based on timeline progress
+              const cardStart = (i - 1) / (cards.length - 1);
+              const cardEnd = i / (cards.length - 1);
 
-            gsap.to(card, {
-              x: targetX,
-              duration: 0.6,
-              overwrite: "auto",
-              ease: "power2.inOut",
-            });
+              let targetX;
+              if (progress <= cardStart) {
+                targetX = "105%"; // Not started yet
+              } else if (progress >= cardEnd) {
+                targetX = "0%"; // Fully visible
+              } else {
+                // Mid-animation - interpolate between 105% and 0%
+                const cardProgress =
+                  (progress - cardStart) / (cardEnd - cardStart);
+                targetX = `${105 - cardProgress * 105}%`;
+              }
+
+              gsap.to(card, {
+                x: targetX,
+                duration: 0.6,
+                overwrite: "auto",
+                ease: "power2.inOut",
+              });
+            }
           });
         });
       });
