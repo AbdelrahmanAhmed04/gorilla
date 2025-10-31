@@ -1,0 +1,20 @@
+.homepage-project-card {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  background-color: var(--main-dark);
+  .card-title {
+    position: absolute;
+    top: -28px;
+    color: var(--main-light);
+    font-size: 16px;
+    font-family: var(--default-font);
+    background-color: var(--main-red);
+    padding: 4px 8px;
+    border-radius: 0 12px 0 0;
+  }
+}

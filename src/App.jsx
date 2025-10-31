@@ -14,10 +14,8 @@ import { gsap } from "gsap";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Hero from "./components/hero/Hero";
-import AboutSection from "./components/about-section/AboutSection";
-import Footer from "./components/footer/Footer";
+import HomepageProjects from "./components/homepage-projects-section/HomepageProjects";
 import ScrollProgress from "./components/scroll-progress/ScrollProgress";
-import ProjectsCarousel from "./components/projects-carousel-homepage/ProjectsCarousel";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 const images = import.meta.glob("./assets/*.{jpg,png,webp}", { eager: true });
@@ -52,7 +50,7 @@ function App() {
       <div className="smooth-wrapper" ref={wrapperRef}>
         <div className="smooth-container" ref={containerRef}>
           <Hero />
-          <ProjectsCarousel />
+          <HomepageProjects />
         </div>
       </div>
     </>
