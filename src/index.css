@@ -178,9 +178,7 @@ html {
 .uppercase {
   text-transform: uppercase;
 }
-.underlined {
-  text-decoration: underline;
-}
+
 .red-colored {
   color: var(--main-red);
 }

@@ -18,24 +18,24 @@ function LocationSection() {
           <div className="contact-container">
             <img src={EmailIcon} alt="Email" />
             <h4>Email</h4>
-            <p>info@gorilla.com</p>
+            <p>info@gorillaproduction.org</p>
           </div>
           <div className="contact-container">
             <img src={WhatsappIcon} alt="Whatsapp" />
             <h4>WhatsApp</h4>
-            <p>+20 XXX XXX XXXX</p>
+            <p>+201205505035</p>
           </div>
         </div>
         <div className="left-clustur">
           <div className="contact-container">
             <img src={PhoneIcon} alt="Phone Number" />
             <h4>Phone Number</h4>
-            <p>+20 XXX XXX XXXX | +966 XXX XXX XXXX</p>
+            <p>+201205505035</p>
           </div>
           <div className="contact-container">
             <img src={LocationIcon} alt="Locations" />
             <h4>Locations</h4>
-            <p>Cairo · Riyadh</p>
+            <p>52 Gamal Salem, Giza, Dokki</p>
           </div>
         </div>
       </div>
