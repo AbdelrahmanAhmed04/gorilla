@@ -63,7 +63,6 @@ function ProjectDetails() {
           ) : (
             <>
               <div className="video-player-container">
-                <img src={VideoLogo} alt="Gorilla Logo" />
                 <iframe
                   title="vimeo-player"
                   src={project.videoUrl + "&autoplay=1&muted=1"}

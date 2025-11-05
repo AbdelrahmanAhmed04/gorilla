@@ -23,7 +23,7 @@ function usePreloadAssets() {
   useEffect(() => {
     Object.values(images).forEach((module) => {
       const img = new Image();
-      img.src = module.default; // module.default is the URL
+      img.src = module.default;
     });
   }, []);
 }
@@ -31,6 +31,8 @@ function usePreloadAssets() {
 function Projects() {
   var wrapperRef = useRef();
   var containerRef = useRef();
+  var ourWorkRef = useRef();
+
   useLayoutEffect(() => {
     const smoother = ScrollSmoother.create({
       wrapper: wrapperRef.current,
@@ -41,6 +43,20 @@ function Projects() {
     });
 
     return () => smoother.kill();
+  }, []);
+
+  // Marquee animation for "Our Work"
+  useEffect(() => {
+    if (ourWorkRef.current) {
+      const marqueeText = ourWorkRef.current;
+
+      gsap.to(marqueeText, {
+        x: "-50%",
+        duration: 25,
+        ease: "none",
+        repeat: -1,
+      });
+    }
   }, []);
 
   const { projects } = useContext(ProjectsContext);
@@ -70,7 +86,9 @@ function Projects() {
     const filtered = projects.filter(filterProjects);
     setUpdatedProjects(filtered);
   }, [filter, projects, country]);
+
   usePreloadAssets();
+
   return (
     <>
       <div className="smooth-wrapper" ref={wrapperRef}>
@@ -133,11 +151,25 @@ function Projects() {
                 KSA
               </button>
             </div>
-            <h2>Our Work</h2>
-            <p>
-              Commercials, branded content, and films produced with passion and
-              precision.
-            </p>
+
+            <div
+              style={{
+                overflow: "hidden",
+                width: "100%",
+                whiteSpace: "nowrap",
+              }}
+            >
+              <h2
+                ref={ourWorkRef}
+                style={{
+                  display: "inline-block",
+                  paddingRight: "50px",
+                }}
+              >
+                WORK - WORK - WORK - WORK - WORK - WORK - WORK - WORK - WORK -
+                WORK - WORK - WORK
+              </h2>
+            </div>
 
             <div className="categories-filters glass-button-no-hover">
               <button
