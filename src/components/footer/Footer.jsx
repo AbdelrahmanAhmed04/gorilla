@@ -129,7 +129,6 @@ function Footer() {
       >
         <p>
           PRODUCTIONS - PRODUCTIONS - PRODUCTIONS - PRODUCTIONS - PRODUCTIONS -
-          PRODUCTIONS - PRODUCTIONS - PRODUCTIONS - PRODUCTIONS - PRODUCTIONS -
           PRODUCTIONS - PRODUCTIONS
         </p>
       </div>

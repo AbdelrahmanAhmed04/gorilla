@@ -63,66 +63,68 @@ function AboutMainSection() {
       <div className="who-we">
         <div className="who-we__title__container gsap-fade-in">
           <h2 className="who-we__title gsap-fade-in">About</h2>
-          <div className="vertical-break gsap-fade-in"></div>
         </div>
         <div className="who-we__intro gsap-fade-in">
           <div className="who-we__content gsap-fade-in">
-            <h3 className="gsap-fade-in">who we are</h3>
-            <div className="who-we__categories gsap-fade-in">
-              <p className="category gsap-fade-in">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                >
-                  <circle
-                    cx="5"
-                    cy="5"
-                    r="5"
-                    transform="matrix(-1 0 0 1 10 -0.000244141)"
-                    fill="#CC3333"
-                  />
-                </svg>
-                Bold stories
-              </p>
-              <p className="category gsap-fade-in">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                >
-                  <circle
-                    cx="5"
-                    cy="5"
-                    r="5"
-                    transform="matrix(-1 0 0 1 10 -0.000244141)"
-                    fill="#CC3333"
-                  />
-                </svg>
-                Cinematic craft
-              </p>
-              <p className="category gsap-fade-in">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                >
-                  <circle
-                    cx="5"
-                    cy="5"
-                    r="5"
-                    transform="matrix(-1 0 0 1 10 -0.000244141)"
-                    fill="#CC3333"
-                  />
-                </svg>
-                Middle Eastern roots
-              </p>
+            <h2 className="who-we__title gsap-fade-in mobile-only">About</h2>
+            <div who-we-categories-container>
+              <h3 className="gsap-fade-in">who we are</h3>
+              <div className="who-we__categories gsap-fade-in">
+                <p className="category gsap-fade-in">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="10"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    fill="none"
+                  >
+                    <circle
+                      cx="5"
+                      cy="5"
+                      r="5"
+                      transform="matrix(-1 0 0 1 10 -0.000244141)"
+                      fill="#CC3333"
+                    />
+                  </svg>
+                  Bold stories
+                </p>
+                <p className="category gsap-fade-in">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="10"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    fill="none"
+                  >
+                    <circle
+                      cx="5"
+                      cy="5"
+                      r="5"
+                      transform="matrix(-1 0 0 1 10 -0.000244141)"
+                      fill="#CC3333"
+                    />
+                  </svg>
+                  Cinematic craft
+                </p>
+                <p className="category gsap-fade-in">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="10"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    fill="none"
+                  >
+                    <circle
+                      cx="5"
+                      cy="5"
+                      r="5"
+                      transform="matrix(-1 0 0 1 10 -0.000244141)"
+                      fill="#CC3333"
+                    />
+                  </svg>
+                  Middle Eastern roots
+                </p>
+              </div>
             </div>
           </div>
           <div className="who-we__bio gsap-fade-in">
@@ -138,7 +140,6 @@ function AboutMainSection() {
         </div>
       </div>
       <div className="about-container-2">
-        <h2 className="mobile-title gsap-fade-in">About</h2>
         <div className="about-2-content gsap-fade-in">
           <div className="our-approch-container gsap-fade-in">
             <h3 className="gsap-fade-in">our approach</h3>
@@ -226,10 +227,7 @@ function AboutMainSection() {
             </p>
           </div>
         </div>
-        <div className="title-container gsap-fade-in">
-          <h2 className="title gsap-fade-in">About</h2>
-          <div className="vertical-break gsap-fade-in"></div>
-        </div>
+        <div className="title-container gsap-fade-in"></div>
       </div>
     </section>
   );
