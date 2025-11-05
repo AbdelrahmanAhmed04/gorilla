@@ -55,7 +55,6 @@
   display: flex;
   justify-content: space-between;
   background-color: var(--main-light);
-  padding: 5vw 6vw;
   gap: 2vw;
 }
 @media screen and (max-width: 1200px) {

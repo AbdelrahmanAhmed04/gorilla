@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./navbar.css";
 import LightNavLogo from "../../assets/logo-black-red.svg";
-import DarkNavLogo from "../../assets/logo-light.svg";
+import DarkNavLogo from "../../assets/logo-transparent-red-outlined.svg";
 import { CountryContext } from "../../country-context/CountryContext";
 import { useContext } from "react";
 

@@ -122,83 +122,6 @@ function Footer() {
 
   return (
     <footer>
-      <div className="footer-container" ref={footerContainerRef}>
-        <div className="footer-cta">
-          <div ref={sentenceRef} className="footer-sentence">
-            <h2>{sentenceSpans.slice(0, 4)}</h2>
-            <h2>
-              {sentenceSpans.slice(4, 5)}
-
-              <span className="red-colored uppercase">
-                {" "}
-                {sentenceSpans.slice(5, 7)}
-              </span>
-            </h2>
-          </div>
-          <Link
-            to="/contact"
-            className="glass-button"
-            id="glass-button-extended"
-            ref={getInTouchRef}
-          >
-            Get in Touch
-          </Link>
-        </div>
-        <div className="footer-contacts">
-          <div className="social-media" ref={leftContact}>
-            <div className="locations-container">
-              <h3>General</h3>
-              <Link to="/projects" onClick={() => setCountry("eg")}>
-                EG
-              </Link>
-              <Link to="/projects" onClick={() => setCountry("ksa")}>
-                KSA
-              </Link>
-            </div>
-            <div className="social-container">
-              <h3>Follow us on</h3>
-              <div className="social-links-continer">
-                <a className="social-link" href="https://youtube.com">
-                  <img src={YoutubeLogo} alt="YouTube" /> <p>YouTube</p>
-                </a>
-                <a className="social-link" href="https://vimeo.com">
-                  <img src={VimeoLogo} alt="Vimeo" /> <p>Vimeo</p>
-                </a>
-                <a className="social-link" href="https://instagram.com">
-                  <img src={InstagramLogo} alt="Instagram" /> <p>Instagram</p>
-                </a>
-                <a className="social-link" href="https://tiktok.com">
-                  <img src={TiktokLogo} alt="Tiktok" /> <p>Tiktok</p>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="contact-info" ref={rightContact}>
-            <div className="contact-details">
-              <h3>Contact</h3>
-              <p>+02524664466</p>
-              <a href="mailto:info@gorilla.com">info@gorilla.com</a>
-            </div>
-            <div className="footer-nav">
-              <h3>Helpful links</h3>
-              <div className="links-container">
-                <div className="link-container">
-                  <Link to="/about">About</Link>
-                  <img src={RedCircle} alt="Red Circle" />
-                </div>
-                <div className="link-container">
-                  <Link to="/contact">Contact</Link>
-                  <img src={RedCircle} alt="Red Circle" />
-                </div>
-                <div className="link-container">
-                  <Link to="/projects">Projects</Link>
-                  <img src={RedCircle} alt="Red Circle" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <div
         className="productions-subfooter"
         style={{ backgroundImage: `url(${FooterBg})` }}
@@ -206,11 +129,26 @@ function Footer() {
       >
         <p>
           PRODUCTIONS - PRODUCTIONS - PRODUCTIONS - PRODUCTIONS - PRODUCTIONS -
-          PRODUCTIONS
+          PRODUCTIONS - PRODUCTIONS - PRODUCTIONS - PRODUCTIONS - PRODUCTIONS -
+          PRODUCTIONS - PRODUCTIONS
         </p>
       </div>
       <div className="copyrights-container">
-        <p>© 2025 Gorilla. All rights reserved.</p>
+        <div className="social-links-continer">
+          <a className="social-link" href="https://youtube.com">
+            <img src={YoutubeLogo} alt="YouTube" /> <p>YouTube</p>
+          </a>
+          <a className="social-link" href="https://vimeo.com">
+            <img src={VimeoLogo} alt="Vimeo" /> <p>Vimeo</p>
+          </a>
+          <a className="social-link" href="https://instagram.com">
+            <img src={InstagramLogo} alt="Instagram" /> <p>Instagram</p>
+          </a>
+          <a className="social-link" href="https://tiktok.com">
+            <img src={TiktokLogo} alt="Tiktok" /> <p>Tiktok</p>
+          </a>
+        </div>
+        <p>© 2025 Powered by In Mind.</p>
       </div>
     </footer>
   );

@@ -15,6 +15,15 @@ function HomepageProjectCard({ project, index }) {
       <div className="card-title" data-index={index}>
         <p>{project.title}</p>
       </div>
+      <p className="bottom-title">{project.title}</p>
+      <img
+        src={
+          new URL(`../../assets/${project.title}-logo.png`, import.meta.url)
+            .href
+        }
+        alt={project.title || "Project image"}
+        className="bottom-logo"
+      />
     </Link>
   );
 }

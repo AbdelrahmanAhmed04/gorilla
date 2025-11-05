@@ -57,20 +57,6 @@
       flex-direction: column;
       gap: 1vh;
     }
-    .social-links-continer {
-      display: grid;
-      grid-template-columns: auto auto;
-      .social-link {
-        display: flex;
-        flex-direction: row;
-        gap: 1vh;
-        margin-right: 1vw;
-        margin-bottom: 0.2vw;
-        img {
-          width: 1vw;
-        }
-      }
-    }
   }
   .contact-info {
     display: flex;
@@ -118,7 +104,6 @@
   overflow: hidden;
   white-space: nowrap;
   width: 100%;
-
   p {
     color: var(--main-light);
     font-family: var(--default-font);
@@ -131,6 +116,35 @@
     display: inline-block;
     padding-right: 50px;
     animation: marquee 25s linear infinite;
+  }
+  .social-links-continer {
+    display: grid;
+    grid-template-columns: auto auto;
+    .social-link {
+      display: flex;
+      flex-direction: row;
+      gap: 1vh;
+      margin-right: 1vw;
+      margin-bottom: 0.2vw;
+      img {
+        width: 1vw;
+      }
+    }
+  }
+}
+.social-links-continer {
+  display: flex;
+  align-items: flex-end;
+  .social-link {
+    display: flex;
+    flex-direction: row;
+    gap: 1vh;
+    margin-right: 1vw;
+    margin-bottom: 0.2vw;
+    text-decoration: none;
+    img {
+      width: 1vw;
+    }
   }
 }
 
@@ -146,6 +160,8 @@
 .copyrights-container {
   padding: 1.5vw 6vw;
   background-color: var(--main-light);
+  display: flex;
+  justify-content: space-between;
   p {
     font-family: var(--default-font);
     color: var(--main-dark);
@@ -199,6 +215,10 @@
     }
   }
   .copyrights-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
     padding: 16px 6vw;
     p {
       font-size: 14px;
@@ -238,18 +258,19 @@
           }
         }
       }
-      .social-media {
-        .social-links-continer {
-          .social-link {
-            img {
-              width: 14px;
-            }
-          }
-        }
+    }
+  }
+  .social-links-continer {
+    width: 100%;
+    justify-content: space-between;
+    .social-link {
+      img {
+        width: 18px;
       }
     }
   }
 }
+
 @media screen and (max-width: 576px) {
   .footer-container {
     flex-direction: column;

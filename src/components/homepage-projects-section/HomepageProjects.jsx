@@ -44,7 +44,7 @@ function HomepageProjects() {
         if (index > 0) {
           timeline.fromTo(
             card,
-            { x: "105%" },
+            { x: "150%" },
             { x: "0%", duration: 1, ease: "linear" },
             index - 1
           );
@@ -56,7 +56,7 @@ function HomepageProjects() {
         trigger: sectionRef.current,
         start: "top top",
         end: `+=${cards.length * window.innerHeight}`,
-        scrub: true,
+        scrub: 1,
         pin: true,
       });
 

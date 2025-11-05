@@ -19,3 +19,24 @@
     border-radius: 0 12px 0 0;
   }
 }
+.bottom-title {
+  position: absolute;
+  bottom: 10%;
+  left: 2%;
+  font-weight: 600;
+  color: var(--main-light);
+  font-size: 60px;
+  font-family: var(--default-font);
+  transition: 0.2s;
+}
+
+.homepage-project-card:hover .bottom-title {
+  scale: 1.05;
+}
+.bottom-logo {
+  position: absolute;
+  bottom: 10%;
+  right: 8%;
+  opacity: 60%;
+  width: 200px;
+}
