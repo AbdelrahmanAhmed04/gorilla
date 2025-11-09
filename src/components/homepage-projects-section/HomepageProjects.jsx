@@ -15,6 +15,11 @@ function HomepageProjects() {
   useEffect(() => {
     if (!homepageProjects || homepageProjects.length === 0) return;
 
+    const isMobile = window.innerWidth < 768 || "ontouchstart" in window;
+
+    // Skip animations on mobile - just normal scrolling
+    if (isMobile) return;
+
     const titles = gsap.utils.toArray(".card-title");
     let xOffset = 0;
     const gap = 20;
@@ -27,7 +32,6 @@ function HomepageProjects() {
 
     const ctx = gsap.context(() => {
       const cards = gsap.utils.toArray(".homepage-project-card");
-      const isMobile = window.innerWidth < 768 || "ontouchstart" in window;
 
       gsap.set(cards, {
         position: "absolute",
@@ -43,23 +47,12 @@ function HomepageProjects() {
       cards.forEach((card, index) => {
         gsap.set(card, { zIndex: index });
         if (index > 0) {
-          if (isMobile) {
-            // Vertical sliding for mobile
-            timeline.fromTo(
-              card,
-              { y: "150%" },
-              { y: "0%", duration: 1, ease: "linear" },
-              index - 1
-            );
-          } else {
-            // Horizontal sliding for desktop
-            timeline.fromTo(
-              card,
-              { x: "150%" },
-              { x: "0%", duration: 1, ease: "linear" },
-              index - 1
-            );
-          }
+          timeline.fromTo(
+            card,
+            { x: "150%" },
+            { x: "0%", duration: 1, ease: "linear" },
+            index - 1
+          );
         }
       });
 
@@ -72,67 +65,64 @@ function HomepageProjects() {
         pin: true,
       });
 
-      // Only add hover interactions on desktop
-      if (!isMobile) {
-        titles.forEach((title) => {
-          const index = parseInt(title.dataset.index, 10);
+      titles.forEach((title) => {
+        const index = parseInt(title.dataset.index, 10);
 
-          title.addEventListener("mouseenter", () => {
-            const after = cards.slice(index + 1);
-            const beforeAndCurrent = cards.slice(0, index + 1);
+        title.addEventListener("mouseenter", () => {
+          const after = cards.slice(index + 1);
+          const beforeAndCurrent = cards.slice(0, index + 1);
 
-            gsap.to(after, {
-              x: "105%",
-              duration: 0.5,
-              overwrite: "auto",
-              ease: "power2.out",
-            });
-
-            gsap.to(beforeAndCurrent, {
-              x: "0%",
-              duration: 0.4,
-              overwrite: "auto",
-              ease: "power2.out",
-            });
+          gsap.to(after, {
+            x: "105%",
+            duration: 0.5,
+            overwrite: "auto",
+            ease: "power2.out",
           });
 
-          title.addEventListener("mouseleave", () => {
-            const progress = timeline.progress();
-
-            cards.forEach((card, i) => {
-              if (i === 0) {
-                gsap.to(card, {
-                  x: "0%",
-                  duration: 0.6,
-                  overwrite: "auto",
-                  ease: "power2.inOut",
-                });
-              } else {
-                const cardStart = (i - 1) / (cards.length - 1);
-                const cardEnd = i / (cards.length - 1);
-
-                let targetX;
-                if (progress <= cardStart) {
-                  targetX = "105%";
-                } else if (progress >= cardEnd) {
-                  targetX = "0%";
-                } else {
-                  const cardProgress =
-                    (progress - cardStart) / (cardEnd - cardStart);
-                  targetX = `${105 - cardProgress * 105}%`;
-                }
-
-                gsap.to(card, {
-                  x: targetX,
-                  duration: 0.6,
-                  overwrite: "auto",
-                  ease: "power2.inOut",
-                });
-              }
-            });
+          gsap.to(beforeAndCurrent, {
+            x: "0%",
+            duration: 0.4,
+            overwrite: "auto",
+            ease: "power2.out",
           });
         });
-      }
+
+        title.addEventListener("mouseleave", () => {
+          const progress = timeline.progress();
+
+          cards.forEach((card, i) => {
+            if (i === 0) {
+              gsap.to(card, {
+                x: "0%",
+                duration: 0.6,
+                overwrite: "auto",
+                ease: "power2.inOut",
+              });
+            } else {
+              const cardStart = (i - 1) / (cards.length - 1);
+              const cardEnd = i / (cards.length - 1);
+
+              let targetX;
+              if (progress <= cardStart) {
+                targetX = "105%";
+              } else if (progress >= cardEnd) {
+                targetX = "0%";
+              } else {
+                const cardProgress =
+                  (progress - cardStart) / (cardEnd - cardStart);
+                targetX = `${105 - cardProgress * 105}%`;
+              }
+
+              gsap.to(card, {
+                x: targetX,
+                duration: 0.6,
+                overwrite: "auto",
+                ease: "power2.inOut",
+              });
+            }
+          });
+        });
+      });
     }, sectionRef);
 
     return () => {
