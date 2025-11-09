@@ -105,7 +105,7 @@ function ProjectDetails() {
               </div>
               <div className="more-work-container">
                 <h2 className="uppercase">
-                  more <span className="underlined">work</span>
+                  more <span className="red-colored">work</span>
                   <span className="red-colored">.</span>
                 </h2>
 

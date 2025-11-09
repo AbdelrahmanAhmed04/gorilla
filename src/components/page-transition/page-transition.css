@@ -1,6 +1,8 @@
 .page-transition-overlay {
   position: fixed;
   inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  height: 110vh; /* Extended height */
+  top: -5vh; /* Center the extra height vertically */
   background: var(--main-dark); /* use project's main dark variable */
   z-index: 9999;
   /* Show overlay by default to prevent initial content flash. It will be hidden
@@ -19,7 +21,7 @@
 }
 
 .pt-gif {
-  width: 260px; /* larger by default */
+  width: 120vw; /* larger GIF size */
   height: auto;
   opacity: 0;
   transform: scale(0.98);
@@ -29,6 +31,6 @@
 
 @media (min-width: 768px) {
   .pt-gif {
-    width: 320px; /* larger on desktop */
+    width: 60vw; /* same size on desktop */
   }
 }

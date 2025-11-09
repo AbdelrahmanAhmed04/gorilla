@@ -166,8 +166,9 @@ function Projects() {
                   paddingRight: "50px",
                 }}
               >
-                WORK - WORK - WORK - WORK - WORK - WORK - WORK - WORK - WORK -
-                WORK - WORK - WORK
+                PROJECTS - PROJECTS - PROJECTS - PROJECTS - PROJECTS - PROJECTS
+                - PROJECTS - PROJECTS - PROJECTS - PROJECTS - PROJECTS -
+                PROJECTS
               </h2>
             </div>
 

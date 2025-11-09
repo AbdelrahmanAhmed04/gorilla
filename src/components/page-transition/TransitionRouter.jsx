@@ -6,22 +6,26 @@ import PageTransition from "./PageTransition.jsx";
 export default function TransitionRouter({ routesElement }) {
   const location = useLocation();
   const transitionRef = useRef(null);
+  const isInitialMount = useRef(true);
 
   // The location we render. Starts with current location so initial render shows page immediately.
   const [displayLocation, setDisplayLocation] = useState(location);
   const [isAnimating, setIsAnimating] = useState(false);
-  // Play reveal on initial mount so the initial page starts behind the overlay
+
+  // Play reveal on initial mount with GIF
   useEffect(() => {
     let mounted = true;
     const runInitial = async () => {
       if (transitionRef.current && transitionRef.current.reveal) {
         try {
-          await transitionRef.current.reveal();
+          // Show GIF only on initial load
+          await transitionRef.current.reveal(true);
         } catch (e) {
           /* ignore */
         }
       }
       if (!mounted) return;
+      isInitialMount.current = false;
     };
     runInitial();
     return () => {
@@ -55,7 +59,8 @@ export default function TransitionRouter({ routesElement }) {
 
       try {
         if (transitionRef.current && transitionRef.current.reveal) {
-          await transitionRef.current.reveal();
+          // Don't show GIF for page changes, only initial load
+          await transitionRef.current.reveal(false);
         }
       } catch (e) {
         // ignore

@@ -9,8 +9,8 @@ function LocationSection() {
       <h3>
         Wherever you are,
         <br />
-        let's start the{" "}
-        <span className="bold underlined uppercase">conversation</span>
+        let's start the
+        <span className="bold red-colored uppercase"> conversation</span>
         <span className="bold red-colored">.</span>
       </h3>
       <div className="location-details">

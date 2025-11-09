@@ -15,3 +15,47 @@
   justify-content: center;
   height: 100%;
 }
+
+/* Mobile layout - normal scrolling */
+.homepage-projects-mobile {
+  position: relative !important;
+  height: auto !important;
+  overflow: visible !important; /* Allow scrolling */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mobile-project-wrapper {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 100vh;
+  display: block;
+}
+
+.homepage-projects-mobile .homepage-project-card {
+  position: relative !important;
+  width: 100% !important;
+  height: 100vh !important; /* Fixed height for mobile */
+  min-height: 100vh;
+  transform: none !important;
+  left: auto !important;
+  top: auto !important;
+  margin-top: 28px;
+}
+
+/* Ensure the Link element displays as block on mobile */
+.homepage-projects-mobile a.homepage-project-card {
+  display: block !important;
+}
+
+@media (max-width: 768px) {
+  .homepage-project-card {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 100vh;
+    transform: none !important;
+  }
+}

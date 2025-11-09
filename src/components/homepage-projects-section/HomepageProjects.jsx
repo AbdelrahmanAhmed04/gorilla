@@ -1,7 +1,7 @@
 import "./homepage-projects.css";
 import HomepageProjectCard from "../homepage-project-card/HomepageProjectCard";
 import { ProjectsContext } from "../../components/projects-context/ProjectsContext";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -11,14 +11,22 @@ function HomepageProjects() {
   const { projects } = useContext(ProjectsContext);
   const homepageProjects = projects.filter((p) => p.homepage);
   const sectionRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" &&
+      (window.innerWidth < 768 || "ontouchstart" in window)
+  );
 
   useEffect(() => {
-    if (!homepageProjects || homepageProjects.length === 0) return;
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768 || "ontouchstart" in window);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
-    const isMobile = window.innerWidth < 768 || "ontouchstart" in window;
-
-    // Skip animations on mobile - just normal scrolling
-    if (isMobile) return;
+  useEffect(() => {
+    if (!homepageProjects || homepageProjects.length === 0 || isMobile) return;
 
     const titles = gsap.utils.toArray(".card-title");
     let xOffset = 0;
@@ -128,8 +136,26 @@ function HomepageProjects() {
     return () => {
       ctx.revert();
     };
-  }, [homepageProjects]);
+  }, [homepageProjects, isMobile]);
 
+  // Render differently for mobile vs desktop
+  if (isMobile) {
+    return (
+      <section className="homepage-projects-section homepage-projects-mobile">
+        {homepageProjects.length === 0 ? (
+          <div className="skeleton">Loading projects...</div>
+        ) : (
+          homepageProjects.map((project, index) => (
+            <div key={project.id} className="mobile-project-wrapper">
+              <HomepageProjectCard project={project} index={index} />
+            </div>
+          ))
+        )}
+      </section>
+    );
+  }
+
+  // Desktop render
   return (
     <section className="homepage-projects-section" ref={sectionRef}>
       {homepageProjects.length === 0 ? (
