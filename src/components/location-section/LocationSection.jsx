@@ -41,8 +41,7 @@ function LocationSection() {
       </div>
       <iframe
         className="gorilla-location"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.6821609297003!2d31.224298799999996!3d30.045975100000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458409aa81d58a5%3A0x6ce6bf7cd258d6fe!2sCairo%20Tower!5e0!3m2!1sen!2seg!4v1758234487129!5m2!1sen!2seg"
-        allowFullScreen=""
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.8155474898094!2d31.200974999999993!3d30.042149199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145846ccb5d88dfb%3A0x60864035928b53ec!2s52%20Gamal%20Salem%2C%20Ad%20Doqi%2C%20Dokki%2C%20Giza%20Governorate%203751210!5e0!3m2!1sen!2seg!4v1763263108331!5m2!1sen!2seg"
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>

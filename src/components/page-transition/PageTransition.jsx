@@ -66,7 +66,7 @@ const PageTransition = forwardRef(function PageTransition(_, ref) {
           const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
           tl.set(el, { xPercent: 0, display: "flex" });
           tl.to(img, { duration: 0.15, opacity: 1, scale: 1 }, "+=0.05");
-          tl.to({}, { duration: 3 });
+          tl.to({}, { duration: 4.5 });
           tl.to(el, {
             duration: 0.55,
             xPercent: 100,
