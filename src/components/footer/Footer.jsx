@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import InstagramLogo from "../../assets/icons/instagram.svg";
 import TiktokLogo from "../../assets/icons/tiktok.svg";
 import VimeoLogo from "../../assets/icons/vimeo.svg";
-import YoutubeLogo from "../../assets/icons/youtube.svg";
+import FacebookLogo from "../../assets/icons/facebook.png";
 import FooterBg from "../../assets/footer-bg.webp";
 import { CountryContext } from "../../country-context/CountryContext";
 import { useContext, useRef, useEffect } from "react";
@@ -134,16 +134,28 @@ function Footer() {
       </div>
       <div className="copyrights-container">
         <div className="social-links-continer">
-          <a className="social-link" href="https://youtube.com">
-            <img src={YoutubeLogo} alt="YouTube" /> <p>YouTube</p>
+          <a
+            className="social-link"
+            href="https://www.facebook.com/gorillaproductionseg/"
+          >
+            <img src={FacebookLogo} alt="Facebook" /> <p>Facebook</p>
           </a>
-          <a className="social-link" href="https://vimeo.com">
+          <a
+            className="social-link"
+            href="https://vimeo.com/gorillamediaproduction/"
+          >
             <img src={VimeoLogo} alt="Vimeo" /> <p>Vimeo</p>
           </a>
-          <a className="social-link" href="https://instagram.com">
+          <a
+            className="social-link"
+            href="https://www.instagram.com/gorillaproductionseg/"
+          >
             <img src={InstagramLogo} alt="Instagram" /> <p>Instagram</p>
           </a>
-          <a className="social-link" href="https://tiktok.com">
+          <a
+            className="social-link"
+            href="https://www.tiktok.com/@gorillaproductionseg/"
+          >
             <img src={TiktokLogo} alt="Tiktok" /> <p>Tiktok</p>
           </a>
         </div>
