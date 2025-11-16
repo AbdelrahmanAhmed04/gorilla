@@ -10,45 +10,51 @@
   overflow: visible;
   z-index: 1000 !important;
   padding: 16px 32px;
+}
 
-  a {
-    z-index: 4;
-  }
-  img {
-    width: 100px;
-  }
+.navbar-container a {
+  z-index: 4;
+}
+
+.navbar-container img {
+  width: 100px;
 }
 
 .dark-nav {
   background-color: var(--main-dark);
-  a {
-    color: var(--main-light);
-  }
 }
+
+.dark-nav a {
+  color: var(--main-light);
+}
+
 .light-nav {
   background-color: var(--main-light);
+}
 
-  a {
-    color: var(--main-dark);
-  }
+.light-nav a {
+  color: var(--main-dark);
 }
 
 .nav-links {
   z-index: 5;
   display: flex;
   gap: 3vw;
-  a {
-    text-decoration: none;
-    transition: ease-in-out 0.1s;
-  }
-  a:hover {
-    font-weight: 700;
-  }
-  .active {
-    font-weight: 700;
-  }
 }
-/* Hide hamburger on desktop */
+
+.nav-links a {
+  text-decoration: none;
+  transition: ease-in-out 0.1s;
+}
+
+.nav-links a:hover {
+  font-weight: 700;
+}
+
+.nav-links .active {
+  font-weight: 700;
+}
+
 /* Hamburger button */
 .hamburger {
   display: none;
@@ -58,9 +64,12 @@
   height: 20px;
   padding: 0;
   background: none;
+  border: none; /* Fix: Remove default button border */
   cursor: pointer;
   z-index: 1001;
+  position: relative; /* Fix: Ensure proper stacking */
 }
+
 .hamburger span {
   display: block;
   height: 3px;
@@ -68,18 +77,23 @@
   border-radius: 2px;
   transition: transform 0.3s ease, opacity 0.3s ease, background-color 0s 0.08s;
 }
+
 .dark-nav .hamburger span {
   background: var(--main-light);
 }
+
 .hamburger.open span {
   background: var(--main-dark);
 }
+
 .hamburger.open span:nth-child(1) {
   transform: rotate(45deg) translateY(12px);
 }
+
 .hamburger.open span:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger.open span:nth-child(3) {
   transform: rotate(-45deg) translateY(-12px);
 }
@@ -115,21 +129,26 @@
   font-weight: 300;
   transition: 0.2s ease;
 }
+
 .mobile-nav a:hover {
   font-weight: 700;
   text-decoration: underline;
 }
+
 .mobile-nav .active {
   font-weight: 700;
 }
 
+.counries {
+  display: none; /* Hide on desktop by default */
+}
+
 /* Responsive rules */
 @media screen and (max-width: 768px) {
-  .navbar-container {
-    img {
-      width: 100px;
-    }
+  .navbar-container img {
+    width: 100px;
   }
+
   .counries {
     display: flex;
     flex-direction: row;
@@ -139,13 +158,16 @@
     font-size: 20px;
     font-weight: 400;
   }
+
   .navbar-container {
     padding-top: 48px;
     padding-bottom: 16px;
   }
+
   .hamburger {
     display: flex;
   }
+
   .nav-links {
     display: none;
   }
